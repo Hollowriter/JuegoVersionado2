@@ -2,6 +2,7 @@
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
+#include"vld.h"
 using namespace std;
 int main() {
 	sf::Time contando = sf::seconds(0.01f);
