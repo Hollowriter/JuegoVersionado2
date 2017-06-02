@@ -12,9 +12,10 @@ private:
 	int score;
 public:
 	PlayerP();
-	void Move();
-	void Death();
-	void Draw(sf::CircleShape circulo);
+	PlayerP(int vida, int balas, int puntos, sf::CircleShape circulo);
+	void Move(sf::Time cuento);
+	bool Death();
+	void Draw(sf::RenderWindow ventana);
 	void SetHealth(int vida);
 	void SetBullets(int balas);
 	void SetScore(int puntos);
