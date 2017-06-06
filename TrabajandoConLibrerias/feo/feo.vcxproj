@@ -132,10 +132,12 @@
     <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerP.cpp" />
+    <ClCompile Include="Radroach.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="PlayerP.h" />
+    <ClInclude Include="Radroach.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,12 +4,11 @@
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
 class EnemyBase{
-private:
+protected:
 	sf::RectangleShape enemyShape;
 	int health;
 public:
 	EnemyBase();
-	EnemyBase(sf::RectangleShape rectangulo, int vida);
 	~EnemyBase();
 	virtual void Attack(sf::Time cuento) = 0;
 	void Draw(sf::RenderWindow ventana);

@@ -5,11 +5,6 @@ EnemyBase::EnemyBase()
 health(0),
 enemyShape(sf::Vector2f(100, 100)){
 }
-EnemyBase::EnemyBase(sf::RectangleShape rectangulo, int vida)
-:
-health(vida),
-enemyShape(rectangulo){
-}
 EnemyBase::~EnemyBase(){
 }
 void EnemyBase::Attack(sf::Time cuento){

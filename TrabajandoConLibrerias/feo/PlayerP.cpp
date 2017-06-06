@@ -2,8 +2,8 @@
 
 PlayerP::PlayerP()
 :
-health(0),
-bullets(0),
+health(100),
+bullets(30),
 score(0),
 thyShape(100.0f){
 }
@@ -34,7 +34,7 @@ bool PlayerP::Death() {
 	}
 	return false;
 }
-void PlayerP::Draw(sf::RenderWindow ventana){
+void PlayerP::Draw(sf::RenderWindow &ventana){
 	ventana.draw(thyShape);
 }
 void PlayerP::SetHealth(int vida){
@@ -56,5 +56,6 @@ int PlayerP::GetScore(){
 	return score;
 }
 sf::CircleShape PlayerP::GetShape(){
+	thyShape.setFillColor(sf::Color::Green);
 	return thyShape;
 }

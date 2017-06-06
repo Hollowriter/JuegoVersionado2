@@ -2,6 +2,7 @@
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
+#include"PlayerP.h"
 #if DEBUG
 #include"vld.h"
 #endif
@@ -10,6 +11,8 @@ using namespace std;
 int main() {
 	sf::Time contando = sf::seconds(0.01f);
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
+	PlayerP* myomi;
+	myomi = new PlayerP();
 	// sf::CircleShape shape(100.f);
 	// sf::RectangleShape thyRectangle(sf::Vector2f(100, 100));
 	/*sf::Texture thyTexture;
@@ -24,36 +27,19 @@ int main() {
 	// shape.setFillColor(sf::Color::Red);
 	// thyRectangle.setFillColor(sf::Color::Blue);
 	// bool laColision = false;
-	while (window.isOpen()){
+	while (window.isOpen() && !(myomi->Death())){
 		sf::Event event;
 		while (window.pollEvent(event)){
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		// shape.move(contando.asSeconds(), 0);
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-			thyRectangle.move(-(contando.asSeconds() * 10), 0);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-			thyRectangle.move(contando.asSeconds() * 10, 0);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			thyRectangle.move(0, -(contando.asSeconds() * 10));
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			thyRectangle.move(0, contando.asSeconds() * 10);
-		}
-		if (thyRectangle.getGlobalBounds().intersects(leSprite.getGlobalBounds())) {
-			laColision = true;
-		}
-		if (laColision == true) {
-			leSprite.move(0, contando.asMilliseconds());
-		}*/
+		myomi->Move(contando);
 		window.clear(sf::Color::White);
-		// window.draw(shape);
 		// window.draw(thyRectangle);
 		// window.draw(leSprite);
+		window.draw(myomi->GetShape());
 		window.display();
 	}
+	delete myomi;
 	return 0;
 }
