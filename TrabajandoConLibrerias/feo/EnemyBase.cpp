@@ -14,7 +14,7 @@ EnemyBase::~EnemyBase(){
 }
 void EnemyBase::Attack(sf::Time cuento, sf::Clock reloj, PlayerP* niña){
 }
-void EnemyBase::Draw(sf::RenderWindow ventana) {
+void EnemyBase::Draw(sf::RenderWindow &ventana) {
 	ventana.draw(enemyShape);
 }
 bool EnemyBase::Death(){

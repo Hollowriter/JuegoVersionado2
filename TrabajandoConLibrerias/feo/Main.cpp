@@ -3,16 +3,20 @@
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
 #include"PlayerP.h"
+#include"Radroach.h"
 #if DEBUG
 #include"vld.h"
 #endif
 #include"json.hpp"
 using namespace std;
 int main() {
+	sf::Clock relojito;
 	sf::Time contando = sf::seconds(0.01f);
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	PlayerP* myomi;
+	EnemyBase* cucarachita;
 	myomi = new PlayerP();
+	cucarachita = new Radroach();
 	// sf::CircleShape shape(100.f);
 	// sf::RectangleShape thyRectangle(sf::Vector2f(100, 100));
 	/*sf::Texture thyTexture;
@@ -34,10 +38,12 @@ int main() {
 				window.close();
 		}
 		myomi->Move(contando);
+		cucarachita->Attack(contando, relojito, myomi);
 		window.clear(sf::Color::White);
 		// window.draw(thyRectangle);
 		// window.draw(leSprite);
 		window.draw(myomi->GetShape());
+		window.draw(cucarachita->GetShape());
 		window.display();
 	}
 	delete myomi;
