@@ -12,7 +12,7 @@ enemyShape(rectangulo) {
 }
 EnemyBase::~EnemyBase(){
 }
-void EnemyBase::Attack(sf::Time cuento, sf::Clock reloj, PlayerP* niña){
+void EnemyBase::Attack(sf::Time cuento, PlayerP* niña){
 }
 void EnemyBase::Draw(sf::RenderWindow &ventana) {
 	ventana.draw(enemyShape);
@@ -28,6 +28,12 @@ void EnemyBase::SetHealth(int vida) {
 }
 int EnemyBase::GetHealth() {
 	return health;
+}
+void EnemyBase::SetEnemyTime(float timing) {
+	enemyTime = timing;
+}
+float EnemyBase::GetEnemyTime() {
+	return enemyTime;
 }
 sf::RectangleShape EnemyBase::GetShape() {
 	enemyShape.setFillColor(sf::Color::Black);

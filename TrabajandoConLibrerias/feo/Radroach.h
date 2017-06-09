@@ -5,6 +5,6 @@ public:
 	Radroach();
 	Radroach(sf::RectangleShape rectangulo, int vida);
 	~Radroach();
-	void Attack(sf::Time cuento, sf::Clock reloj, PlayerP* niña);
+	void Attack(sf::Time cuento, PlayerP* niña);
 };
 

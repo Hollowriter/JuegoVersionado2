@@ -11,7 +11,7 @@
 using namespace std;
 int main() {
 	sf::Clock relojito;
-	sf::Time contando = sf::seconds(0.01f);
+	sf::Time contando = relojito.restart();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	PlayerP* myomi;
 	EnemyBase* cucarachita;
@@ -33,18 +33,22 @@ int main() {
 	// bool laColision = false;
 	while (window.isOpen() && !(myomi->Death())){
 		sf::Event event;
+		contando = relojito.restart();
 		while (window.pollEvent(event)){
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
 		myomi->Move(contando);
-		cucarachita->Attack(contando, relojito, myomi);
+		cucarachita->Attack(contando, myomi);
 		window.clear(sf::Color::White);
 		// window.draw(thyRectangle);
 		// window.draw(leSprite);
 		window.draw(myomi->GetShape());
 		window.draw(cucarachita->GetShape());
 		window.display();
+		if (contando.asSeconds() > 20) {
+			// relojito.restart();
+		}
 	}
 	delete myomi;
 	return 0;
