@@ -4,6 +4,7 @@
 #include"SFML\Audio.hpp"
 #include"PlayerP.h"
 #include"Radroach.h"
+#include"Beatle.h"
 #if DEBUG
 #include"vld.h"
 #endif
@@ -15,8 +16,10 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	PlayerP* myomi;
 	EnemyBase* cucarachita;
+	EnemyBase* cascarudo;
 	myomi = new PlayerP();
 	cucarachita = new Radroach();
+	cascarudo = new Beatle();
 	// sf::CircleShape shape(100.f);
 	// sf::RectangleShape thyRectangle(sf::Vector2f(100, 100));
 	/*sf::Texture thyTexture;
@@ -40,11 +43,13 @@ int main() {
 		}
 		myomi->Move(contando);
 		cucarachita->Attack(contando, myomi);
+		cascarudo->Attack(contando, myomi);
 		window.clear(sf::Color::White);
 		// window.draw(thyRectangle);
 		// window.draw(leSprite);
 		window.draw(myomi->GetShape());
 		window.draw(cucarachita->GetShape());
+		window.draw(cascarudo->GetShape());
 		window.display();
 		if (contando.asSeconds() > 20) {
 			// relojito.restart();
@@ -52,5 +57,6 @@ int main() {
 	}
 	delete myomi;
 	delete cucarachita;
+	delete cascarudo;
 	return 0;
 }

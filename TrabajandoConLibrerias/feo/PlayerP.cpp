@@ -5,7 +5,7 @@ PlayerP::PlayerP()
 health(100),
 bullets(30),
 score(0),
-thyShape(100.0f){
+thyShape(70.0f){
 }
 PlayerP::PlayerP(int vida, int balas, int puntos, sf::CircleShape circulo)
 	:
@@ -16,16 +16,16 @@ PlayerP::PlayerP(int vida, int balas, int puntos, sf::CircleShape circulo)
 }
 void PlayerP::Move(sf::Time cuento) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		thyShape.move(-(cuento.asSeconds() * 1000), 0);
+		thyShape.move(-(cuento.asSeconds() * 750), 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		thyShape.move(cuento.asSeconds() * 1000, 0);
+		thyShape.move(cuento.asSeconds() * 750, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		thyShape.move(0, -(cuento.asSeconds() * 1000));
+		thyShape.move(0, -(cuento.asSeconds() * 750));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-		thyShape.move(0, cuento.asSeconds() * 1000);
+		thyShape.move(0, cuento.asSeconds() * 750);
 	}
 }
 bool PlayerP::Death() {

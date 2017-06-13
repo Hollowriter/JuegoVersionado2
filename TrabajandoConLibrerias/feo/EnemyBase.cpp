@@ -3,7 +3,7 @@
 EnemyBase::EnemyBase()
 :
 health(20),
-enemyShape(sf::Vector2f(100, 100)),
+enemyShape(sf::Vector2f(50, 50)),
 enemyTime(0){
 }
 EnemyBase::EnemyBase(sf::RectangleShape rectangulo, int vida, float tiempo)
