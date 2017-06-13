@@ -2,27 +2,32 @@
 
 Radroach::Radroach():EnemyBase(){
 }
-Radroach::Radroach(sf::RectangleShape rectangulo, int vida):EnemyBase(rectangulo, vida){
+Radroach::Radroach(sf::RectangleShape rectangulo, int vida, float tiempo):EnemyBase(rectangulo, vida, tiempo){
 }
 Radroach::~Radroach(){
 }
 void Radroach::Attack(sf::Time cuento, PlayerP* niña){
-	enemyTime += cuento.asMicroseconds();
+	if (enemyTime <= 4) {
+		enemyTime += cuento.asSeconds();
+	}
+	else if (enemyTime > 4){
+		enemyTime = 0;
+	}
 	if (niña->GetShape().getPosition() != enemyShape.getPosition()){
-		if (enemyTime <= 10) {
+		if (enemyTime <= 2) {
 			if (niña->GetShape().getPosition().x > enemyShape.getPosition().x) {
-				enemyShape.move(2, 0);
+				enemyShape.move(0.5, 0);
 			}
 			else if (niña->GetShape().getPosition().x < enemyShape.getPosition().x) {
-				enemyShape.move(-2, 0);
+				enemyShape.move(-0.5, 0);
 			}
 		}
-		else if (enemyTime > 10 && enemyTime <= 20){
+		else if (enemyTime > 2 && enemyTime <= 4){
 			if (niña->GetShape().getPosition().y > enemyShape.getPosition().y) {
-				enemyShape.move(0, 2);
+				enemyShape.move(0, 0.5);
 			}
 			else if (niña->GetShape().getPosition().y < enemyShape.getPosition().y) {
-				enemyShape.move(0, -2);
+				enemyShape.move(0, -0.5);
 			}
 		}
 	}

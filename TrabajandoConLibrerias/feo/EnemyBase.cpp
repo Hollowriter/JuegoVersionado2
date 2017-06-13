@@ -2,13 +2,15 @@
 
 EnemyBase::EnemyBase()
 :
-health(0),
-enemyShape(sf::Vector2f(100, 100)){
+health(20),
+enemyShape(sf::Vector2f(100, 100)),
+enemyTime(0){
 }
-EnemyBase::EnemyBase(sf::RectangleShape rectangulo, int vida)
+EnemyBase::EnemyBase(sf::RectangleShape rectangulo, int vida, float tiempo)
 :
 health(vida),
-enemyShape(rectangulo) {
+enemyShape(rectangulo),
+enemyTime(tiempo){
 }
 EnemyBase::~EnemyBase(){
 }

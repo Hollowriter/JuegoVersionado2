@@ -51,5 +51,6 @@ int main() {
 		}
 	}
 	delete myomi;
+	delete cucarachita;
 	return 0;
 }

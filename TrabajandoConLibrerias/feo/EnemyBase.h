@@ -11,7 +11,7 @@ protected:
 	float enemyTime;
 public:
 	EnemyBase();
-	EnemyBase(sf::RectangleShape rectangulo, int vida);
+	EnemyBase(sf::RectangleShape rectangulo, int vida, float tiempo);
 	~EnemyBase();
 	virtual void Attack(sf::Time cuento, PlayerP* niña) = 0;
 	void Draw(sf::RenderWindow &ventana);
