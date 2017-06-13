@@ -44,6 +44,16 @@ int main() {
 		myomi->Move(contando);
 		cucarachita->Attack(contando, myomi);
 		cascarudo->Attack(contando, myomi);
+		if (myomi->GetShape().getGlobalBounds().intersects(cucarachita->GetShape().getGlobalBounds()) &&
+			!(cucarachita->Death())) {
+			myomi->SetHealth(myomi->GetHealth() - cucarachita->GetHealth());
+			cucarachita->SetHealth(cucarachita->GetHealth() - cucarachita->GetHealth());
+		}
+		if (myomi->GetShape().getGlobalBounds().intersects(cascarudo->GetShape().getGlobalBounds()) &&
+			!(cascarudo->Death())) {
+			myomi->SetHealth(myomi->GetHealth() - cascarudo->GetHealth());
+			cascarudo->SetHealth(cascarudo->GetHealth() - cascarudo->GetHealth());
+		}
 		window.clear(sf::Color::White);
 		// window.draw(thyRectangle);
 		// window.draw(leSprite);
@@ -51,9 +61,6 @@ int main() {
 		window.draw(cucarachita->GetShape());
 		window.draw(cascarudo->GetShape());
 		window.display();
-		if (contando.asSeconds() > 20) {
-			// relojito.restart();
-		}
 	}
 	delete myomi;
 	delete cucarachita;

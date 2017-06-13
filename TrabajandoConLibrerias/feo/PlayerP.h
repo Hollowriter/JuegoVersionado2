@@ -6,13 +6,13 @@
 using namespace std;
 class PlayerP {
 private:
-	sf::CircleShape thyShape;
+	sf::RectangleShape thyShape;
 	int health;
 	int bullets;
 	int score;
 public:
 	PlayerP();
-	PlayerP(int vida, int balas, int puntos, sf::CircleShape circulo);
+	PlayerP(int vida, int balas, int puntos, sf::RectangleShape rectangular);
 	void Move(sf::Time cuento);
 	bool Death();
 	void Draw(sf::RenderWindow &ventana);
@@ -22,5 +22,5 @@ public:
 	int GetHealth();
 	int GetBullets();
 	int GetScore();
-	sf::CircleShape GetShape();
+	sf::RectangleShape GetShape();
 };

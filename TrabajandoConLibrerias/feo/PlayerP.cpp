@@ -5,14 +5,16 @@ PlayerP::PlayerP()
 health(100),
 bullets(30),
 score(0),
-thyShape(70.0f){
+thyShape(sf::Vector2f(70, 70)){
+	thyShape.setPosition(100, 100);
 }
-PlayerP::PlayerP(int vida, int balas, int puntos, sf::CircleShape circulo)
+PlayerP::PlayerP(int vida, int balas, int puntos, sf::RectangleShape rectangular)
 	:
 	health(vida),
 	bullets(balas),
 	score(puntos),
-	thyShape(circulo) {
+	thyShape(rectangular) {
+	thyShape.setPosition(100, 100);
 }
 void PlayerP::Move(sf::Time cuento) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -55,7 +57,7 @@ int PlayerP::GetBullets(){
 int PlayerP::GetScore(){
 	return score;
 }
-sf::CircleShape PlayerP::GetShape(){
+sf::RectangleShape PlayerP::GetShape(){
 	thyShape.setFillColor(sf::Color::Green);
 	return thyShape;
 }

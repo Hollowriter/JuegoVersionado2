@@ -21,6 +21,7 @@ void EnemyBase::Draw(sf::RenderWindow &ventana) {
 }
 bool EnemyBase::Death(){
 	if (health <= 0) {
+		enemyShape.setPosition(1000, 1000);
 		return true;
 	}
 	return false;
