@@ -138,12 +138,14 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerP.cpp" />
     <ClCompile Include="Radroach.cpp" />
+    <ClCompile Include="Rock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beatle.h" />
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="PlayerP.h" />
     <ClInclude Include="Radroach.h" />
+    <ClInclude Include="Rock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
