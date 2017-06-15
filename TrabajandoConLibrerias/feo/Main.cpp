@@ -5,6 +5,7 @@
 #include"PlayerP.h"
 #include"Radroach.h"
 #include"Beatle.h"
+#include"Rock.h"
 #if DEBUG
 #include"vld.h"
 #endif
@@ -17,11 +18,11 @@ int main() {
 	PlayerP* myomi;
 	EnemyBase* cucarachita;
 	EnemyBase* cascarudo;
+	Rock* mineral;
 	myomi = new PlayerP();
 	cucarachita = new Radroach();
 	cascarudo = new Beatle();
-	// sf::CircleShape shape(100.f);
-	// sf::RectangleShape thyRectangle(sf::Vector2f(100, 100));
+	mineral = new Rock();
 	/*sf::Texture thyTexture;
 	sf::Sprite leSprite;
 	sf::Music spicy;*/
@@ -31,9 +32,6 @@ int main() {
 	leSprite.setTexture(thyTexture);
 	leSprite.scale(0.3f, 0.3f);
 	leSprite.setPosition(200, 200);*/
-	// shape.setFillColor(sf::Color::Red);
-	// thyRectangle.setFillColor(sf::Color::Blue);
-	// bool laColision = false;
 	while (window.isOpen() && !(myomi->Death())){
 		sf::Event event;
 		contando = relojito.restart();
@@ -42,6 +40,8 @@ int main() {
 				window.close();
 		}
 		myomi->Move(contando);
+		myomi->Throwing(mineral);
+		mineral->Path(window);
 		cucarachita->Attack(contando, myomi);
 		cascarudo->Attack(contando, myomi);
 		if (myomi->GetShape().getGlobalBounds().intersects(cucarachita->GetShape().getGlobalBounds()) &&
@@ -60,10 +60,12 @@ int main() {
 		window.draw(myomi->GetShape());
 		window.draw(cucarachita->GetShape());
 		window.draw(cascarudo->GetShape());
+		window.draw(mineral->GetShape());
 		window.display();
 	}
 	delete myomi;
 	delete cucarachita;
 	delete cascarudo;
+	delete mineral;
 	return 0;
 }

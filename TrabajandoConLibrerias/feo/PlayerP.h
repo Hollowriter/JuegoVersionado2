@@ -3,6 +3,7 @@
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
+#include"Rock.h"
 using namespace std;
 class PlayerP {
 private:
@@ -21,6 +22,7 @@ public:
 	void SetBullets(int balas);
 	void SetScore(int puntos);
 	void SetDirection(int direccion);
+	void Throwing(Rock* piedra);
 	int GetHealth();
 	int GetBullets();
 	int GetScore();

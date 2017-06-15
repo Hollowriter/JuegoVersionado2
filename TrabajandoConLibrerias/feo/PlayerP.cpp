@@ -57,6 +57,17 @@ void PlayerP::SetScore(int puntos){
 void PlayerP::SetDirection(int direccion){
 	direction = direccion;
 }
+void PlayerP::Throwing(Rock* piedra){
+	if (piedra != NULL){
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+			if (piedra->GetThrown() == false) {
+				piedra->GetShape().setPosition(thyShape.getPosition());
+				piedra->SetLook(direction);
+				piedra->SetThrown(true);
+			}
+		}
+	}
+}
 int PlayerP::GetHealth(){
 	return health;
 }
