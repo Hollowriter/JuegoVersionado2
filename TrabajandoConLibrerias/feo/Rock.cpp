@@ -46,7 +46,7 @@ bool Rock::GetThrown(){
 int Rock::GetLook(){
 	return look;
 }
-sf::RectangleShape Rock::GetShape(){
+sf::RectangleShape& Rock::GetShape(){
 	seinShape.setFillColor(sf::Color::Magenta);
 	return seinShape;
 }

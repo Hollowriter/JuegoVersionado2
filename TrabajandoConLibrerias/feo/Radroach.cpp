@@ -17,10 +17,10 @@ void Radroach::Attack(sf::Time cuento, PlayerP* niña){
 		if (niña->GetShape().getPosition() != enemyShape.getPosition()) {
 			if (enemyTime <= 2) {
 				if (niña->GetShape().getPosition().x > enemyShape.getPosition().x) {
-					enemyShape.move(0.3, 0);
+					enemyShape.move(0.2, 0);
 				}
 				else if (niña->GetShape().getPosition().x < enemyShape.getPosition().x) {
-					enemyShape.move(-0.3, 0);
+					enemyShape.move(-0.2, 0);
 				}
 			}
 			else if (enemyTime > 2 && enemyTime <= 4) {

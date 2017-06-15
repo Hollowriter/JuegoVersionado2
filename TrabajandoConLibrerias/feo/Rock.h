@@ -16,6 +16,6 @@ public:
 	void SetLook(int observado);
 	bool GetThrown();
 	int GetLook();
-	sf::RectangleShape GetShape();
+	sf::RectangleShape& GetShape();
 };
 
