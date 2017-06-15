@@ -44,6 +44,8 @@ int main() {
 		mineral->Path(window);
 		cucarachita->Attack(contando, myomi);
 		cascarudo->Attack(contando, myomi);
+		cucarachita->CollideRock(mineral);
+		cascarudo->CollideRock(mineral);
 		if (myomi->GetShape().getGlobalBounds().intersects(cucarachita->GetShape().getGlobalBounds()) &&
 			!(cucarachita->Death())) {
 			myomi->SetHealth(myomi->GetHealth() - cucarachita->GetHealth());

@@ -5,7 +5,7 @@ Rock::Rock()
 look(0),
 thrown(false),
 seinShape(sf::Vector2f(10, 10)){
-	seinShape.setPosition(80, 80);
+	seinShape.setPosition(1000, 1000);
 }
 Rock::~Rock(){
 }
@@ -13,23 +13,23 @@ void Rock::Path(sf::RenderWindow &ventanita){
 	if (thrown == true) {
 		switch (look) {
 		case 0:
-			seinShape.move(0, -1);
+			seinShape.move(0, -0.2);
 			break;
 		case 1:
-			seinShape.move(1, 0);
+			seinShape.move(0.2, 0);
 			break;
 		case 2:
-			seinShape.move(0, 1);
+			seinShape.move(0, 0.2);
 			break;
 		case 3:
-			seinShape.move(-1, 0);
+			seinShape.move(-0.2, 0);
 			break;
 		}
 		if (seinShape.getPosition().x > ventanita.getSize().x ||
 			seinShape.getPosition().x < 0 ||
 			seinShape.getPosition().y > ventanita.getSize().y ||
 			seinShape.getPosition().y < 0) {
-			seinShape.setPosition(80, 80);
+			seinShape.setPosition(1000, 1000);
 			thrown = false;
 		}
 	}
@@ -40,6 +40,11 @@ void Rock::SetThrown(bool tirado){
 void Rock::SetLook(int observado){
 	look = observado;
 }
+/*void Rock::CollideEnemy(EnemyBase* blanco){
+	blanco->SetHealth(blanco->GetHealth() - blanco->GetHealth());
+	thrown = false;
+	seinShape.setPosition(1000, 1000);
+}*/
 bool Rock::GetThrown(){
 	return thrown;
 }

@@ -38,6 +38,17 @@ void EnemyBase::SetEnemyTime(float timing) {
 float EnemyBase::GetEnemyTime() {
 	return enemyTime;
 }
+void EnemyBase::CollideRock(Rock* piedra) {
+	if (!Death()) {
+		if (piedra != NULL) {
+			if (piedra->GetShape().getGlobalBounds().intersects(enemyShape.getGlobalBounds())) {
+				SetHealth(GetHealth() - GetHealth());
+				piedra->GetShape().setPosition(1000, 1000);
+				piedra->SetThrown(false);
+			}
+		}
+	}
+}
 sf::RectangleShape EnemyBase::GetShape() {
 	enemyShape.setFillColor(sf::Color::Black);
 	return enemyShape;

@@ -4,6 +4,7 @@
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
 #include"PlayerP.h"
+#include"Rock.h"
 class EnemyBase{
 protected:
 	sf::RectangleShape enemyShape;
@@ -20,6 +21,7 @@ public:
 	int GetHealth();
 	void SetEnemyTime(float timing);
 	float GetEnemyTime();
+	void CollideRock(Rock* piedra);
 	sf::RectangleShape GetShape();
 };
 
