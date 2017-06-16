@@ -49,6 +49,24 @@ void EnemyBase::CollideRock(Rock* piedra) {
 		}
 	}
 }
+void EnemyBase::Positioning(PlayerP* amenaza){
+	thyPosition = rand() % 1000;
+	if (thyPosition != amenaza->GetShape().getPosition().x && thyPosition != amenaza->GetShape().getPosition().y){
+		if (amenaza->GetShape().getPosition().x > thyPosition) {
+			enemyShape.setPosition(thyPosition + 30, thyPosition);
+		}
+		else if (amenaza->GetShape().getPosition().x < thyPosition) {
+			enemyShape.setPosition(thyPosition - 30, thyPosition);
+		}
+		if (amenaza->GetShape().getPosition().y > thyPosition) {
+			enemyShape.setPosition(thyPosition, thyPosition + 30);
+		}
+		else if (amenaza->GetShape().getPosition().y < thyPosition) {
+			enemyShape.setPosition(thyPosition, thyPosition - 30);
+		}
+		enemyShape.setPosition(thyPosition, thyPosition);
+	}
+}
 sf::RectangleShape EnemyBase::GetShape() {
 	enemyShape.setFillColor(sf::Color::Black);
 	return enemyShape;

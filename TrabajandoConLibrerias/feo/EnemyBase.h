@@ -9,6 +9,7 @@ class EnemyBase{
 protected:
 	sf::RectangleShape enemyShape;
 	int health;
+	int thyPosition;
 	float enemyTime;
 public:
 	EnemyBase();
@@ -22,6 +23,7 @@ public:
 	void SetEnemyTime(float timing);
 	float GetEnemyTime();
 	void CollideRock(Rock* piedra);
+	void Positioning(PlayerP* amenaza);
 	sf::RectangleShape GetShape();
 };
 

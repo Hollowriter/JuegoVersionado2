@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
@@ -12,6 +13,7 @@
 #include"json.hpp"
 using namespace std;
 int main() {
+	srand(time(0));
 	sf::Clock relojito;
 	sf::Time contando = relojito.restart();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
