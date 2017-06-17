@@ -8,27 +8,27 @@ Radroach::~Radroach(){
 }
 void Radroach::Attack(sf::Time cuento, PlayerP* niña){
 	if (!Death()) {
-		if (enemyTime <= 4) {
+		if (enemyTime <= internalTimer) {
 			enemyTime += cuento.asSeconds();
 		}
-		else if (enemyTime > 4) {
+		else if (enemyTime > internalTimer) {
 			enemyTime = 0;
 		}
 		if (niña->GetShape().getPosition() != enemyShape.getPosition()) {
-			if (enemyTime <= 2) {
+			if (enemyTime <= subTimer) {
 				if (niña->GetShape().getPosition().x > enemyShape.getPosition().x) {
-					enemyShape.move(0.3, 0);
+					enemyShape.move(speedMovement, 0);
 				}
 				else if (niña->GetShape().getPosition().x < enemyShape.getPosition().x) {
-					enemyShape.move(-0.3, 0);
+					enemyShape.move(-speedMovement, 0);
 				}
 			}
-			else if (enemyTime > 2 && enemyTime <= 4) {
+			else if (enemyTime > subTimer && enemyTime <= internalTimer) {
 				if (niña->GetShape().getPosition().y > enemyShape.getPosition().y) {
-					enemyShape.move(0, 0.3);
+					enemyShape.move(0, speedMovement);
 				}
 				else if (niña->GetShape().getPosition().y < enemyShape.getPosition().y) {
-					enemyShape.move(0, -0.3);
+					enemyShape.move(0, -speedMovement);
 				}
 			}
 		}

@@ -8,23 +8,23 @@ using namespace std;
 class PlayerP {
 private:
 	sf::RectangleShape thyShape;
+	const int startingPosition = 100;
+	const int velocity = 750;
+	const int startingHealth = 80;
 	int health;
-	int bullets;
 	int score;
 	int direction;
 public:
 	PlayerP();
-	PlayerP(int vida, int balas, int puntos, int direccion, sf::RectangleShape rectangular);
+	PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectangular);
 	void Move(sf::Time cuento);
 	bool Death();
 	void Draw(sf::RenderWindow &ventana);
 	void SetHealth(int vida);
-	void SetBullets(int balas);
 	void SetScore(int puntos);
 	void SetDirection(int direccion);
 	void Throwing(Rock* piedra);
 	int GetHealth();
-	int GetBullets();
 	int GetScore();
 	int GetDirection();
 	sf::RectangleShape GetShape();

@@ -8,6 +8,10 @@
 class EnemyBase{
 protected:
 	sf::RectangleShape enemyShape;
+	const int ditchedOutPosition = 1000;
+	const int basicHealth = 20;
+	const int playerAway = 30;
+	const int positionLottery = 800;
 	int health;
 	int thyPosition;
 	float enemyTime;

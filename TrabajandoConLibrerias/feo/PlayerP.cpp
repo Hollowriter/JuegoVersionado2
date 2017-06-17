@@ -2,38 +2,36 @@
 
 PlayerP::PlayerP()
 :
-health(100),
-bullets(30),
+health(startingHealth),
 score(0),
 direction(0),
 thyShape(sf::Vector2f(70, 70)){
-	thyShape.setPosition(100, 100);
+	thyShape.setPosition(startingPosition, startingPosition);
 }
-PlayerP::PlayerP(int vida, int balas, int puntos, int direccion, sf::RectangleShape rectangular)
+PlayerP::PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectangular)
 	:
 	health(vida),
-	bullets(balas),
 	score(puntos),
 	direction(direccion),
 	thyShape(rectangular){
-	thyShape.setPosition(100, 100);
+	thyShape.setPosition(startingPosition, startingPosition);
 }
 void PlayerP::Move(sf::Time cuento) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		direction = 3;
-		thyShape.move(-(cuento.asSeconds() * 750), 0);
+		thyShape.move(-(cuento.asSeconds() * velocity), 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		direction = 1;
-		thyShape.move(cuento.asSeconds() * 750, 0);
+		thyShape.move(cuento.asSeconds() * velocity, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		direction = 0;
-		thyShape.move(0, -(cuento.asSeconds() * 750));
+		thyShape.move(0, -(cuento.asSeconds() * velocity));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		direction = 2;
-		thyShape.move(0, cuento.asSeconds() * 750);
+		thyShape.move(0, cuento.asSeconds() * velocity);
 	}
 }
 bool PlayerP::Death() {
@@ -47,9 +45,6 @@ void PlayerP::Draw(sf::RenderWindow &ventana){
 }
 void PlayerP::SetHealth(int vida){
 	health = vida;
-}
-void PlayerP::SetBullets(int balas){
-	bullets = balas;
 }
 void PlayerP::SetScore(int puntos){
 	score = puntos;
@@ -70,9 +65,6 @@ void PlayerP::Throwing(Rock* piedra){
 }
 int PlayerP::GetHealth(){
 	return health;
-}
-int PlayerP::GetBullets(){
-	return bullets;
 }
 int PlayerP::GetScore(){
 	return score;

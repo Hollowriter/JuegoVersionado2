@@ -9,16 +9,16 @@ Beatle::~Beatle(){
 void Beatle::Attack(sf::Time cuento, PlayerP* niña){
 	if (!Death()) {
 		if (niña->GetShape().getPosition().x > enemyShape.getPosition().x) {
-			enemyShape.move(0.2, 0);
+			enemyShape.move(speedMovement, 0);
 		}
 		else if (niña->GetShape().getPosition().x < enemyShape.getPosition().x) {
-			enemyShape.move(-0.2, 0);
+			enemyShape.move(-speedMovement, 0);
 		}
 		if (niña->GetShape().getPosition().y > enemyShape.getPosition().y) {
-			enemyShape.move(0, 0.2);
+			enemyShape.move(0, speedMovement);
 		}
 		else if (niña->GetShape().getPosition().y < enemyShape.getPosition().y) {
-			enemyShape.move(0, -0.2);
+			enemyShape.move(0, -speedMovement);
 		}
 	}
 }

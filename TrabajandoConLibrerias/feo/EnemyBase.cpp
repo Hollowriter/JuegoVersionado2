@@ -2,7 +2,7 @@
 
 EnemyBase::EnemyBase()
 :
-health(20),
+health(basicHealth),
 enemyShape(sf::Vector2f(50, 50)),
 enemyTime(0){
 }
@@ -21,7 +21,7 @@ void EnemyBase::Draw(sf::RenderWindow &ventana) {
 }
 bool EnemyBase::Death(){
 	if (health <= 0) {
-		enemyShape.setPosition(1000, 1000);
+		enemyShape.setPosition(ditchedOutPosition, ditchedOutPosition);
 		return true;
 	}
 	return false;
@@ -43,26 +43,26 @@ void EnemyBase::CollideRock(Rock* piedra) {
 		if (piedra != NULL) {
 			if (piedra->GetShape().getGlobalBounds().intersects(enemyShape.getGlobalBounds())) {
 				SetHealth(GetHealth() - GetHealth());
-				piedra->GetShape().setPosition(1000, 1000);
+				piedra->GetShape().setPosition(ditchedOutPosition, ditchedOutPosition);
 				piedra->SetThrown(false);
 			}
 		}
 	}
 }
 void EnemyBase::Positioning(PlayerP* amenaza){
-	thyPosition = rand() % 800;
+	thyPosition = rand() % positionLottery;
 	if (thyPosition != amenaza->GetShape().getPosition().x && thyPosition != amenaza->GetShape().getPosition().y){
 		if (amenaza->GetShape().getPosition().x > thyPosition) {
-			enemyShape.setPosition(thyPosition + 30, thyPosition);
+			enemyShape.setPosition(thyPosition + playerAway, thyPosition);
 		}
 		else if (amenaza->GetShape().getPosition().x < thyPosition) {
-			enemyShape.setPosition(thyPosition - 30, thyPosition);
+			enemyShape.setPosition(thyPosition - playerAway, thyPosition);
 		}
 		if (amenaza->GetShape().getPosition().y > thyPosition) {
-			enemyShape.setPosition(thyPosition, thyPosition + 30);
+			enemyShape.setPosition(thyPosition, thyPosition + playerAway);
 		}
 		else if (amenaza->GetShape().getPosition().y < thyPosition) {
-			enemyShape.setPosition(thyPosition, thyPosition - 30);
+			enemyShape.setPosition(thyPosition, thyPosition - playerAway);
 		}
 	}
 }
