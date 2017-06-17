@@ -25,6 +25,8 @@ int main() {
 	cucarachita = new Radroach();
 	cascarudo = new Beatle();
 	mineral = new Rock();
+	cucarachita->Positioning(myomi);
+	cascarudo->Positioning(myomi);
 	/*sf::Texture thyTexture;
 	sf::Sprite leSprite;
 	sf::Music spicy;*/
