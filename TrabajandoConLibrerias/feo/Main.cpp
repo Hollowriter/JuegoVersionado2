@@ -15,7 +15,7 @@ using namespace std;
 int main() {
 	srand(time(0));
 	sf::Clock relojito;
-	sf::Time contando = relojito.restart();
+	sf::Time contando = relojito.getElapsedTime();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	PlayerP* myomi;
 	EnemyBase* cucarachita;

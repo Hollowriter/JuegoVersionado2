@@ -13,16 +13,16 @@ void Rock::Path(sf::RenderWindow &ventanita){
 	if (thrown == true) {
 		switch (look) {
 		case 0:
-			seinShape.move(0, -0.2);
+			seinShape.move(0, -1);
 			break;
 		case 1:
-			seinShape.move(0.2, 0);
+			seinShape.move(1, 0);
 			break;
 		case 2:
-			seinShape.move(0, 0.2);
+			seinShape.move(0, 1);
 			break;
 		case 3:
-			seinShape.move(-0.2, 0);
+			seinShape.move(-1, 0);
 			break;
 		}
 		if (seinShape.getPosition().x > ventanita.getSize().x ||
