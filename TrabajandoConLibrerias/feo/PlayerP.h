@@ -1,4 +1,6 @@
 #pragma once
+#ifndef PLAYERP_H
+#define PLAYERP_H
 #include<iostream>
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
@@ -29,3 +31,5 @@ public:
 	int GetDirection();
 	sf::RectangleShape GetShape();
 };
+
+#endif

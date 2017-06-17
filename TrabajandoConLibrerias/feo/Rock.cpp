@@ -5,7 +5,7 @@ Rock::Rock()
 look(0),
 thrown(false),
 seinShape(sf::Vector2f(10, 10)){
-	seinShape.setPosition(1000, 1000);
+	seinShape.setPosition(ditchedOutPosition, ditchedOutPosition);
 }
 Rock::~Rock(){
 }
@@ -13,23 +13,23 @@ void Rock::Path(sf::RenderWindow &ventanita){
 	if (thrown == true) {
 		switch (look) {
 		case 0:
-			seinShape.move(0, -1);
+			seinShape.move(0, -speedMovement);
 			break;
 		case 1:
-			seinShape.move(1, 0);
+			seinShape.move(speedMovement, 0);
 			break;
 		case 2:
-			seinShape.move(0, 1);
+			seinShape.move(0, speedMovement);
 			break;
 		case 3:
-			seinShape.move(-1, 0);
+			seinShape.move(-speedMovement, 0);
 			break;
 		}
 		if (seinShape.getPosition().x > ventanita.getSize().x ||
 			seinShape.getPosition().x < 0 ||
 			seinShape.getPosition().y > ventanita.getSize().y ||
 			seinShape.getPosition().y < 0) {
-			seinShape.setPosition(1000, 1000);
+			seinShape.setPosition(ditchedOutPosition, ditchedOutPosition);
 			thrown = false;
 		}
 	}

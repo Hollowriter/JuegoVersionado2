@@ -1,4 +1,7 @@
 #pragma once
+#ifndef BEATLE_H
+#define BEATLE_H
+
 #include "EnemyBase.h"
 class Beatle : public EnemyBase{
 private:
@@ -10,3 +13,4 @@ public:
 	void Attack(sf::Time cuento, PlayerP* niña);
 };
 
+#endif

@@ -1,4 +1,7 @@
 #pragma once
+#ifndef ENEMYBASE_H
+#define ENEMYBASE_H
+
 #include<iostream>
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
@@ -31,3 +34,4 @@ public:
 	sf::RectangleShape GetShape();
 };
 
+#endif

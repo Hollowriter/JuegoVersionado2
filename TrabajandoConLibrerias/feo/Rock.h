@@ -1,4 +1,7 @@
 #pragma once
+#ifndef ROCK_H
+#define ROCK_H
+
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
@@ -6,6 +9,8 @@
 class Rock
 {
 private:
+	const int ditchedOutPosition = 1000;
+	const float speedMovement = 1.0f;
 	int look;
 	bool thrown;
 	sf::RectangleShape seinShape;
@@ -21,3 +26,4 @@ public:
 	sf::RectangleShape& GetShape();
 };
 
+#endif
