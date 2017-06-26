@@ -5,33 +5,39 @@ PlayerP::PlayerP()
 health(startingHealth),
 score(0),
 direction(0),
-thyShape(sf::Vector2f(70, 70)){
-	thyShape.setPosition(startingPosition, startingPosition);
+thyTexture(){
+	thyTexture.loadFromFile("Myomi.png");
+	rectSourceSprite.contains(23, 32);
+	seinSprite.setTexture(thyTexture);
+	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
 }
 PlayerP::PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectangular)
 	:
 	health(vida),
 	score(puntos),
 	direction(direccion),
-	thyShape(rectangular){
-	thyShape.setPosition(startingPosition, startingPosition);
+	thyTexture(){
+	thyTexture.loadFromFile("Myomi.png");
+	rectSourceSprite.contains(23, 32);
+	seinSprite.setTexture(thyTexture);
+	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
 }
 void PlayerP::Move(sf::Time cuento) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		direction = 3;
-		thyShape.move(-(cuento.asSeconds() * velocity), 0);
+		seinSprite.move(-(cuento.asSeconds() * velocity), 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		direction = 1;
-		thyShape.move(cuento.asSeconds() * velocity, 0);
+		seinSprite.move(cuento.asSeconds() * velocity, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		direction = 0;
-		thyShape.move(0, -(cuento.asSeconds() * velocity));
+		seinSprite.move(0, -(cuento.asSeconds() * velocity));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		direction = 2;
-		thyShape.move(0, cuento.asSeconds() * velocity);
+		seinSprite.move(0, cuento.asSeconds() * velocity);
 	}
 }
 bool PlayerP::Death() {
@@ -41,7 +47,7 @@ bool PlayerP::Death() {
 	return false;
 }
 void PlayerP::Draw(sf::RenderWindow &ventana){
-	ventana.draw(thyShape);
+	ventana.draw(seinSprite);
 }
 void PlayerP::SetHealth(int vida){
 	health = vida;
@@ -56,7 +62,7 @@ void PlayerP::Throwing(Rock* piedra){
 	if (piedra != NULL){
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
 			if (piedra->GetThrown() == false) {
-				piedra->GetShape().setPosition(thyShape.getPosition());
+				piedra->GetShape().setPosition(seinSprite.getPosition());
 				piedra->SetLook(direction);
 				piedra->SetThrown(true);
 			}
@@ -72,7 +78,9 @@ int PlayerP::GetScore(){
 int PlayerP::GetDirection(){
 	return direction;
 }
-sf::RectangleShape PlayerP::GetShape(){
-	thyShape.setFillColor(sf::Color::Green);
-	return thyShape;
+sf::Sprite PlayerP::GetShape(){
+	return seinSprite;
+}
+sf::IntRect PlayerP::GetRect(){
+	return rectSourceSprite;
 }

@@ -9,7 +9,9 @@
 using namespace std;
 class PlayerP {
 private:
-	sf::RectangleShape thyShape;
+	sf::Texture thyTexture;
+	sf::IntRect rectSourceSprite;
+	sf::Sprite seinSprite;
 	const int startingPosition = 100;
 	const int velocity = 750;
 	const int startingHealth = 80;
@@ -25,11 +27,13 @@ public:
 	void SetHealth(int vida);
 	void SetScore(int puntos);
 	void SetDirection(int direccion);
+	void SetSprite(sf::Sprite hola);
 	void Throwing(Rock* piedra);
 	int GetHealth();
 	int GetScore();
 	int GetDirection();
-	sf::RectangleShape GetShape();
+	sf::Sprite GetShape();
+	sf::IntRect GetRect();
 };
 
 #endif
