@@ -13,7 +13,9 @@ private:
 	const float speedMovement = 300.0f;
 	int look;
 	bool thrown;
-	sf::RectangleShape seinShape;
+	sf::Texture thyTexture;
+	sf::IntRect rectSourceSprite;
+	sf::Sprite seinSprite;
 public:
 	Rock();
 	~Rock();
@@ -23,7 +25,8 @@ public:
 	// void CollideEnemy(EnemyBase* blanco);
 	bool GetThrown();
 	int GetLook();
-	sf::RectangleShape& GetShape();
+	sf::Sprite& GetShape();
+	sf::IntRect GetRect();
 };
 
 #endif
