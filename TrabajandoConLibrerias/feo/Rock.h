@@ -10,14 +10,14 @@ class Rock
 {
 private:
 	const int ditchedOutPosition = 1000;
-	const float speedMovement = 1.0f;
+	const float speedMovement = 300.0f;
 	int look;
 	bool thrown;
 	sf::RectangleShape seinShape;
 public:
 	Rock();
 	~Rock();
-	void Path(sf::RenderWindow &ventanita);
+	void Path(sf::RenderWindow &ventanita, sf::Time cuento);
 	void SetThrown(bool tirado);
 	void SetLook(int observado);
 	// void CollideEnemy(EnemyBase* blanco);

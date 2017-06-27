@@ -9,20 +9,20 @@ seinShape(sf::Vector2f(10, 10)){
 }
 Rock::~Rock(){
 }
-void Rock::Path(sf::RenderWindow &ventanita){
+void Rock::Path(sf::RenderWindow &ventanita, sf::Time cuento){
 	if (thrown == true) {
 		switch (look) {
 		case 0:
-			seinShape.move(0, -speedMovement);
+			seinShape.move(0, -speedMovement * cuento.asSeconds());
 			break;
 		case 1:
-			seinShape.move(speedMovement, 0);
+			seinShape.move(speedMovement * cuento.asSeconds(), 0);
 			break;
 		case 2:
-			seinShape.move(0, speedMovement);
+			seinShape.move(0, speedMovement * cuento.asSeconds());
 			break;
 		case 3:
-			seinShape.move(-speedMovement, 0);
+			seinShape.move(-speedMovement * cuento.asSeconds(), 0);
 			break;
 		}
 		if (seinShape.getPosition().x > ventanita.getSize().x ||

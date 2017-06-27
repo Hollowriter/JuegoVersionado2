@@ -17,7 +17,7 @@ class Game
 {
 private:
 	sf::Clock relojito;
-	sf::Time contando = relojito.getElapsedTime();
+	sf::Time contando;
 	PlayerP* myomi;
 	EnemyBase* cucarachita;
 	EnemyBase* cascarudo;

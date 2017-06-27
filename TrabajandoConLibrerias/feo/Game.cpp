@@ -15,6 +15,8 @@ Game::~Game(){
 	delete mineral;
 }
 void Game::Play(){
+	srand(time(0));
+	contando = relojito.restart();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	while (window.isOpen() && !(myomi->Death())) {
 		sf::Event event;
@@ -25,7 +27,7 @@ void Game::Play(){
 		}
 		myomi->Move(contando);
 		myomi->Throwing(mineral);
-		mineral->Path(window);
+		mineral->Path(window, contando);
 		cucarachita->Attack(contando, myomi);
 		cascarudo->Attack(contando, myomi);
 		cucarachita->CollideRock(mineral);
