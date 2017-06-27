@@ -10,7 +10,7 @@ private:
 	const float speedMovement = 200.0f;
 public:
 	Radroach();
-	Radroach(sf::RectangleShape rectangulo, int vida, float tiempo);
+	Radroach(int vida, float tiempo);
 	~Radroach();
 	void Attack(sf::Time cuento, PlayerP* niña);
 };

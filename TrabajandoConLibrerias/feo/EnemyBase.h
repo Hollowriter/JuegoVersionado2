@@ -10,7 +10,9 @@
 #include"Rock.h"
 class EnemyBase{
 protected:
-	sf::RectangleShape enemyShape;
+	sf::Texture thyTexture;
+	sf::IntRect rectSourceSprite;
+	sf::Sprite seinSprite;
 	const int ditchedOutPosition = 1000;
 	const int basicHealth = 20;
 	const int playerAway = 30;
@@ -20,7 +22,7 @@ protected:
 	float enemyTime;
 public:
 	EnemyBase();
-	EnemyBase(sf::RectangleShape rectangulo, int vida, float tiempo);
+	EnemyBase(int vida, float tiempo);
 	~EnemyBase();
 	virtual void Attack(sf::Time cuento, PlayerP* niña) = 0;
 	void Draw(sf::RenderWindow &ventana);
@@ -31,7 +33,8 @@ public:
 	float GetEnemyTime();
 	void CollideRock(Rock* piedra);
 	void Positioning(PlayerP* amenaza);
-	sf::RectangleShape GetShape();
+	sf::Sprite& GetShape();
+	sf::IntRect GetRect();
 };
 
 #endif

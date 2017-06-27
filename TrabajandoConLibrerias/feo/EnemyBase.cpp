@@ -3,25 +3,33 @@
 EnemyBase::EnemyBase()
 :
 health(basicHealth),
-enemyShape(sf::Vector2f(50, 50)),
+thyTexture(),
 enemyTime(0){
+	thyTexture.loadFromFile("piedrita.png");
+	rectSourceSprite.contains(32, 32);
+	seinSprite.setTexture(thyTexture);
+	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 }
-EnemyBase::EnemyBase(sf::RectangleShape rectangulo, int vida, float tiempo)
+EnemyBase::EnemyBase(int vida, float tiempo)
 :
 health(vida),
-enemyShape(rectangulo),
+thyTexture(),
 enemyTime(tiempo){
+	thyTexture.loadFromFile("piedrita.png");
+	rectSourceSprite.contains(23, 32);
+	seinSprite.setTexture(thyTexture);
+	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
 }
 EnemyBase::~EnemyBase(){
 }
 void EnemyBase::Attack(sf::Time cuento, PlayerP* niña){
 }
 void EnemyBase::Draw(sf::RenderWindow &ventana) {
-	ventana.draw(enemyShape);
+	ventana.draw(seinSprite);
 }
 bool EnemyBase::Death(){
 	if (health <= 0) {
-		enemyShape.setPosition(ditchedOutPosition, ditchedOutPosition);
+		seinSprite.setPosition(ditchedOutPosition, ditchedOutPosition);
 		return true;
 	}
 	return false;
@@ -41,7 +49,7 @@ float EnemyBase::GetEnemyTime() {
 void EnemyBase::CollideRock(Rock* piedra) {
 	if (!Death()) {
 		if (piedra != NULL) {
-			if (piedra->GetShape().getGlobalBounds().intersects(enemyShape.getGlobalBounds())) {
+			if (piedra->GetShape().getGlobalBounds().intersects(seinSprite.getGlobalBounds())) {
 				SetHealth(GetHealth() - GetHealth());
 				piedra->GetShape().setPosition(ditchedOutPosition, ditchedOutPosition);
 				piedra->SetThrown(false);
@@ -53,20 +61,22 @@ void EnemyBase::Positioning(PlayerP* amenaza){
 	thyPosition = rand() % positionLottery;
 	if (thyPosition != amenaza->GetShape().getPosition().x && thyPosition != amenaza->GetShape().getPosition().y){
 		if (amenaza->GetShape().getPosition().x > thyPosition) {
-			enemyShape.setPosition(thyPosition + playerAway, thyPosition);
+			seinSprite.setPosition(thyPosition + playerAway, thyPosition);
 		}
 		else if (amenaza->GetShape().getPosition().x < thyPosition) {
-			enemyShape.setPosition(thyPosition - playerAway, thyPosition);
+			seinSprite.setPosition(thyPosition - playerAway, thyPosition);
 		}
 		if (amenaza->GetShape().getPosition().y > thyPosition) {
-			enemyShape.setPosition(thyPosition, thyPosition + playerAway);
+			seinSprite.setPosition(thyPosition, thyPosition + playerAway);
 		}
 		else if (amenaza->GetShape().getPosition().y < thyPosition) {
-			enemyShape.setPosition(thyPosition, thyPosition - playerAway);
+			seinSprite.setPosition(thyPosition, thyPosition - playerAway);
 		}
 	}
 }
-sf::RectangleShape EnemyBase::GetShape() {
-	enemyShape.setFillColor(sf::Color::Black);
-	return enemyShape;
+sf::Sprite& EnemyBase::GetShape() {
+	return seinSprite;
+}
+sf::IntRect EnemyBase::GetRect() {
+	return rectSourceSprite;
 }

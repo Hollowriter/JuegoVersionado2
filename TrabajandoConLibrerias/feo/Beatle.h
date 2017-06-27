@@ -8,7 +8,7 @@ private:
 	const float speedMovement = 200.0f;
 public:
 	Beatle();
-	Beatle(sf::RectangleShape rectangulo, int vida, float tiempo);
+	Beatle(int vida, float tiempo);
 	~Beatle();
 	void Attack(sf::Time cuento, PlayerP* niña);
 };
