@@ -8,11 +8,8 @@ int main() {
 }
 /*cosas a completar:
 + Agregar el clima.
-+ Agregar los sprites restantes.
 + Agregar animacion.
 + Agregar musica.
 + Agregar los puntos con el documento.
-+ Agregar los arrays de enemigos.
 + Agregar los creditos y menu.
-+ Delta time.
 */

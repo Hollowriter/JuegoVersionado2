@@ -12,6 +12,7 @@
 #include"vld.h"
 #endif
 #include"json.hpp"
+#define TOPE 10
 using namespace std;
 class Game
 {
@@ -19,8 +20,9 @@ private:
 	sf::Clock relojito;
 	sf::Time contando;
 	PlayerP* myomi;
-	EnemyBase* cucarachita;
-	EnemyBase* cascarudo;
+	/*EnemyBase* cucarachita[TOPE];
+	EnemyBase* cascarudo[TOPE];*/
+	EnemyBase* bichos[TOPE];
 	Rock* mineral;
 public:
 	Game();
