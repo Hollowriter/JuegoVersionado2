@@ -27,6 +27,7 @@ public:
 	virtual void Attack(sf::Time cuento, PlayerP* niña) = 0;
 	void Draw(sf::RenderWindow &ventana);
 	bool Death();
+	void AfterLife(PlayerP* asesino);
 	void SetHealth(int vida);
 	int GetHealth();
 	void SetEnemyTime(float timing);

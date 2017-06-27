@@ -16,9 +16,9 @@ health(vida),
 thyTexture(),
 enemyTime(tiempo){
 	thyTexture.loadFromFile("piedrita.png");
-	rectSourceSprite.contains(23, 32);
+	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
-	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
+	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 }
 EnemyBase::~EnemyBase(){
 }
@@ -29,10 +29,15 @@ void EnemyBase::Draw(sf::RenderWindow &ventana) {
 }
 bool EnemyBase::Death(){
 	if (health <= 0) {
-		seinSprite.setPosition(ditchedOutPosition, ditchedOutPosition);
 		return true;
 	}
 	return false;
+}
+void EnemyBase::AfterLife(PlayerP* asesino){
+	if (Death()) {
+		health = basicHealth;
+		this->Positioning(asesino);
+	}
 }
 void EnemyBase::SetHealth(int vida) {
 	health = vida;

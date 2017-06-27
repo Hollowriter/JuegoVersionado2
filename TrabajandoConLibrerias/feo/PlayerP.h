@@ -14,7 +14,7 @@ private:
 	sf::Sprite seinSprite;
 	const int startingPosition = 100;
 	const int velocity = 750;
-	const int startingHealth = 80;
+	const int startingHealth = 110;
 	int health;
 	int score;
 	int direction;
@@ -27,7 +27,6 @@ public:
 	void SetHealth(int vida);
 	void SetScore(int puntos);
 	void SetDirection(int direccion);
-	void SetSprite(sf::Sprite hola);
 	void Throwing(Rock* piedra);
 	int GetHealth();
 	int GetScore();

@@ -2,11 +2,7 @@
 
 Game::Game(){
     myomi = new PlayerP();
-	/*cucarachita = new Radroach();
-	cascarudo = new Beatle();*/
 	mineral = new Rock();
-	/*cucarachita->Positioning(myomi);
-	cascarudo->Positioning(myomi);*/
 	for (int i = 0; i < TOPE; i++){
 		if (i < TOPE / 2) {
 			bichos[i] = new Radroach();
@@ -21,8 +17,6 @@ Game::Game(){
 }
 Game::~Game(){
 	delete myomi;
-	/*delete cucarachita;
-	delete cascarudo;*/
 	delete mineral;
 	for (int i = 0; i < TOPE; i++){
 		if (bichos[i] != NULL) {
@@ -56,28 +50,11 @@ void Game::Play(){
 					myomi->SetHealth(myomi->GetHealth() - bichos[i]->GetHealth());
 					bichos[i]->SetHealth(bichos[i]->GetHealth() - bichos[i]->GetHealth());
 				}
+				bichos[i]->AfterLife(myomi);
 			}
 		}
-		/*cucarachita->Attack(contando, myomi);
-		cascarudo->Attack(contando, myomi);
-		cucarachita->CollideRock(mineral);
-		cascarudo->CollideRock(mineral);*/
-		/*if (myomi->GetShape().getGlobalBounds().intersects(cucarachita->GetShape().getGlobalBounds()) &&
-			!(cucarachita->Death())) {
-			myomi->SetHealth(myomi->GetHealth() - cucarachita->GetHealth());
-			cucarachita->SetHealth(cucarachita->GetHealth() - cucarachita->GetHealth());
-		}
-		if (myomi->GetShape().getGlobalBounds().intersects(cascarudo->GetShape().getGlobalBounds()) &&
-			!(cascarudo->Death())) {
-			myomi->SetHealth(myomi->GetHealth() - cascarudo->GetHealth());
-			cascarudo->SetHealth(cascarudo->GetHealth() - cascarudo->GetHealth());
-		}*/
 		window.clear(sf::Color::White);
-		// window.draw(thyRectangle);
-		// window.draw(leSprite);
 		window.draw(myomi->GetShape());
-		/*window.draw(cucarachita->GetShape());
-		window.draw(cascarudo->GetShape());*/
 		window.draw(mineral->GetShape());
 		for (int i = 0; i < TOPE; i++){
 			if (bichos[i] != NULL) {
