@@ -1,6 +1,7 @@
 #pragma once
 #ifndef RADROACH_H
 #define RADROACH_H
+
 #include "EnemyBase.h"
 class Radroach :public EnemyBase{
 private:
