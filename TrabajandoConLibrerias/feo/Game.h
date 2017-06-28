@@ -9,6 +9,7 @@
 #include"Radroach.h"
 #include"Beatle.h"
 #include"Rock.h"
+#include<Windows.h>
 #if DEBUG
 #include"vld.h"
 #endif
@@ -24,11 +25,15 @@ private:
 	PlayerP* myomi;
 	EnemyBase* bichos[TOPE];
 	Rock* mineral;
+	sf::Font fuente;
+	sf::Text texto;
 	int puntaje;
 	int puntajeMasAlto;
 public:
 	Game();
 	~Game();
+	void Menu();
 	void Play();
+	void Credits();
 };
 

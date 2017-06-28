@@ -5,6 +5,8 @@ Game::Game()
 puntaje(0),
 puntajeMasAlto(0){
 	srand(time(0));
+	/*fuente.loadFromFile("arial.ttf");
+	texto.setFont(fuente);*/
 }
 Game::~Game(){
 	delete myomi;
