@@ -20,6 +20,9 @@ Game::~Game(){
 	myomi = NULL;
 	mineral = NULL;
 }
+void Game::Menu(){
+	// pendiente
+}
 void Game::Play(){
 	musiquita.openFromFile("someone.ogg");
 	musiquita.play();
