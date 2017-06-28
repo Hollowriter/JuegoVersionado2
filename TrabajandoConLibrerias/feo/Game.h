@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<ctime>
+#include<fstream>
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
@@ -19,11 +20,12 @@ class Game
 private:
 	sf::Clock relojito;
 	sf::Time contando;
+	sf::Music musiquita;
 	PlayerP* myomi;
-	/*EnemyBase* cucarachita[TOPE];
-	EnemyBase* cascarudo[TOPE];*/
 	EnemyBase* bichos[TOPE];
 	Rock* mineral;
+	int puntaje;
+	int puntajeMasAlto;
 public:
 	Game();
 	~Game();

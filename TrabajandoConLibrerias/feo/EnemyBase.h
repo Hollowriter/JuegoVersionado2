@@ -13,6 +13,8 @@ protected:
 	sf::Texture thyTexture;
 	sf::IntRect rectSourceSprite;
 	sf::Sprite seinSprite;
+	sf::SoundBuffer sonido;
+	sf::Sound sonidito;
 	const int ditchedOutPosition = 1000;
 	const int basicHealth = 20;
 	const int playerAway = 30;

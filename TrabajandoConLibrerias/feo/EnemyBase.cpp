@@ -9,6 +9,8 @@ enemyTime(0){
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+	sonido.loadFromFile("Squish.wav");
+	sonidito.setBuffer(sonido);
 }
 EnemyBase::EnemyBase(int vida, float tiempo)
 :
@@ -19,6 +21,8 @@ enemyTime(tiempo){
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+	sonido.loadFromFile("Squish.wav");
+	sonidito.setBuffer(sonido);
 }
 EnemyBase::~EnemyBase(){
 }
@@ -58,6 +62,7 @@ void EnemyBase::CollideRock(Rock* piedra) {
 				SetHealth(GetHealth() - GetHealth());
 				piedra->GetShape().setPosition(ditchedOutPosition, ditchedOutPosition);
 				piedra->SetThrown(false);
+				sonidito.play();
 			}
 		}
 	}

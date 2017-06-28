@@ -9,7 +9,11 @@ int main() {
 /*cosas a completar:
 + Agregar el clima.
 + Agregar animacion.
-+ Agregar musica.
 + Agregar los puntos con el documento.
 + Agregar los creditos y menu.
++ Quitar la consola de release
+*/
+/*
+Musica: http://freemusicarchive.org/music/Dead_Peoples_Records/Just_a_Minute/You_should_have_said_you_were_with_someone_1044
+Sonido: http://soundbible.com/511-Squish-1.html
 */

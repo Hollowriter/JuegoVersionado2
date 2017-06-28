@@ -1,19 +1,10 @@
 #include "Game.h"
 
-Game::Game(){
-    myomi = new PlayerP();
-	mineral = new Rock();
-	for (int i = 0; i < TOPE; i++){
-		if (i < TOPE / 2) {
-			bichos[i] = new Radroach();
-		}
-		else if (i >= TOPE / 2) {
-			bichos[i] = new Beatle();
-		}
-		if (bichos[i] != NULL) {
-			bichos[i]->Positioning(myomi);
-		}
-	}
+Game::Game()
+:
+puntaje(0),
+puntajeMasAlto(0){
+	srand(time(0));
 }
 Game::~Game(){
 	delete myomi;
@@ -28,7 +19,21 @@ Game::~Game(){
 	mineral = NULL;
 }
 void Game::Play(){
-	srand(time(0));
+	musiquita.openFromFile("someone.ogg");
+	musiquita.play();
+	myomi = new PlayerP();
+	mineral = new Rock();
+	for (int i = 0; i < TOPE; i++) {
+		if (i < TOPE / 2) {
+			bichos[i] = new Radroach();
+		}
+		else if (i >= TOPE / 2) {
+			bichos[i] = new Beatle();
+		}
+		if (bichos[i] != NULL) {
+			bichos[i]->Positioning(myomi);
+		}
+	}
 	contando = relojito.restart();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "CosaFea");
 	while (window.isOpen() && !(myomi->Death())) {
