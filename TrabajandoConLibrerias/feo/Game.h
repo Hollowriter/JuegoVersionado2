@@ -29,11 +29,12 @@ private:
 	sf::Text texto;
 	int puntaje;
 	int puntajeMasAlto;
+	bool quieroJugar;
 public:
 	Game();
 	~Game();
 	void Menu();
-	void Play();
-	void Credits();
+	void Play(sf::RenderWindow &window);
+	void Credits(sf::RenderWindow &window);
 };
 

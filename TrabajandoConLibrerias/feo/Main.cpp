@@ -4,7 +4,7 @@ using namespace std;
 #if DEBUG
 int main() {
 	Game* juego = new Game();
-	juego->Play();
+	juego->Menu();
 	delete juego;
 	return 0;
 }
@@ -25,4 +25,5 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char*, int nShowCmd) {
 /*
 Musica: http://freemusicarchive.org/music/Dead_Peoples_Records/Just_a_Minute/You_should_have_said_you_were_with_someone_1044
 Sonido: http://soundbible.com/511-Squish-1.html
+Fuente: http://www.1001fonts.com/times-new-roman-fonts.html?page=1&items=10
 */
