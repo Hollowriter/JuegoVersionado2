@@ -5,6 +5,7 @@
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
 #include"SFML\Audio.hpp"
+#include"SFML\Network.hpp"
 #include"PlayerP.h"
 #include"Radroach.h"
 #include"Beatle.h"
@@ -29,7 +30,12 @@ private:
 	sf::Text texto;
 	int puntaje;
 	int puntajeMasAlto;
+	int clima;
 	bool quieroJugar;
+	const int sunny = 32;
+	const int cloudy = 26;
+	const int hot = 36;
+	const int foggy = 20;
 public:
 	Game();
 	~Game();

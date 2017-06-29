@@ -19,6 +19,18 @@ Game::~Game(){
 	mineral = NULL;
 }
 void Game::Menu(){
+	try {
+		sf::Http http("http://query.yahooapis.com/");
+		sf::Http::Request requesting;
+		requesting.setUri("/v1/public/yql?q=select%20item.condition.code%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22buenos%20aires%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
+		sf::Http::Response answer = http.sendRequest(requesting);
+		nlohmann::json jdata = nlohmann::json::parse(answer.getBody().c_str());
+		cout << jdata["query"]["results"]["channel"]["item"]["condition"]["code"] << endl;
+	}
+	catch (exception e){
+		clima = 2000;
+		throw "tralalala";
+	}
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Myomi and the bugs");
 	quieroJugar = false;
 	sf::Font thyFont;
@@ -130,7 +142,11 @@ void Game::Credits(sf::RenderWindow &window){
 				window.close();
 			}
 		}
-		window.clear(sf::Color::White);
+		switch (clima) {
+		case sunny:
+			window.clear(sf::Color::White);
+			break;
+		}
 		window.draw(texty);
 		window.draw(textou);
 		window.draw(superTextou);

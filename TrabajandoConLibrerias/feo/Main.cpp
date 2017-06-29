@@ -20,7 +20,6 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char*, int nShowCmd) {
 + Agregar el clima.
 + Agregar animacion.
 + Agregar los puntos con el documento.
-+ Agregar los creditos y menu.
 */
 /*
 Musica: http://freemusicarchive.org/music/Dead_Peoples_Records/Just_a_Minute/You_should_have_said_you_were_with_someone_1044
