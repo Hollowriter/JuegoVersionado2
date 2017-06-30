@@ -85,6 +85,7 @@ void Game::Menu(/*sf::RenderWindow &window*/){
 		}
 		if (quieroJugar == true) {
 			Play(window);
+			marcador.setString("High score: " + to_string(puntajeMasAlto));
 		}
 		/*switch (clima) {
 		case sunny:
