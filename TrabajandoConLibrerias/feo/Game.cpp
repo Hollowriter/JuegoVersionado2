@@ -28,11 +28,7 @@ Game::~Game(){
 	myomi = NULL;
 	mineral = NULL;
 }
-/*void Game::WindowCharge(){
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Myomi and the bugs");
-	Menu(window);
-}*/
-void Game::Menu(/*sf::RenderWindow &window*/){
+void Game::Menu(){
 	/*try {
 		sf::Http http("http://query.yahooapis.com/");
 		sf::Http::Request requesting;

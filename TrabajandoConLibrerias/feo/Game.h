@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GAME_H
+#define GAME_H
+
 #include<iostream>
 #include<ctime>
 #include<fstream>
@@ -43,9 +46,9 @@ private:
 public:
 	Game();
 	~Game();
-	// void WindowCharge();
-	void Menu(/*sf::RenderWindow &window*/);
+	void Menu();
 	void Play(sf::RenderWindow &window);
 	void Credits(sf::RenderWindow &window);
 };
 
+#endif

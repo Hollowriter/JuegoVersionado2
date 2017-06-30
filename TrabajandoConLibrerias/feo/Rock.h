@@ -4,8 +4,6 @@
 
 #include"SFML\Window.hpp"
 #include"SFML\Graphics.hpp"
-#include"SFML\Audio.hpp"
-// #include"EnemyBase.h"
 class Rock
 {
 private:
@@ -22,7 +20,6 @@ public:
 	void Path(sf::RenderWindow &ventanita, sf::Time cuento);
 	void SetThrown(bool tirado);
 	void SetLook(int observado);
-	// void CollideEnemy(EnemyBase* blanco);
 	bool GetThrown();
 	int GetLook();
 	sf::Sprite& GetShape();
