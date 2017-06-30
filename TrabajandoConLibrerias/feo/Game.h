@@ -38,6 +38,8 @@ private:
 	int clima;
 	bool quieroJugar;
 	const int basicHealth = 110;
+	const int ventanaY = 600;
+	const int ventanaX = 800;
 public:
 	Game();
 	~Game();

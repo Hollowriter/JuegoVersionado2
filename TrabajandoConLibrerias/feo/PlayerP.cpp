@@ -7,9 +7,9 @@ score(0),
 direction(0),
 thyTexture(){
 	thyTexture.loadFromFile("Myomi.png");
-	rectSourceSprite.contains(23, 32);
+	rectSourceSprite.contains(spriteX, spriteY);
 	seinSprite.setTexture(thyTexture);
-	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
+	seinSprite.setTextureRect(sf::IntRect(0, 0, spriteX, spriteY));
 }
 PlayerP::PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectangular)
 	:
@@ -18,26 +18,30 @@ PlayerP::PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectang
 	direction(direccion),
 	thyTexture(){
 	thyTexture.loadFromFile("Myomi.png");
-	rectSourceSprite.contains(23, 32);
+	rectSourceSprite.contains(spriteX, spriteY);
 	seinSprite.setTexture(thyTexture);
-	seinSprite.setTextureRect(sf::IntRect(0, 0, 23, 32));
+	seinSprite.setTextureRect(sf::IntRect(0, 0, spriteX, spriteY));
 }
 void PlayerP::Move(sf::Time cuento) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		direction = 3;
 		seinSprite.move(-(cuento.asSeconds() * velocity), 0);
+		seinSprite.setTextureRect(sf::IntRect(anim1, 0, spriteX, spriteY));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		direction = 1;
 		seinSprite.move(cuento.asSeconds() * velocity, 0);
+		seinSprite.setTextureRect(sf::IntRect(0, 0, spriteX, spriteY));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		direction = 0;
 		seinSprite.move(0, -(cuento.asSeconds() * velocity));
+		seinSprite.setTextureRect(sf::IntRect(anim4, anim2, spriteX, spriteY));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		direction = 2;
 		seinSprite.move(0, cuento.asSeconds() * velocity);
+		seinSprite.setTextureRect(sf::IntRect(0, anim2, spriteX, spriteY));
 	}
 }
 bool PlayerP::Death() {

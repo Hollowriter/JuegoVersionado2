@@ -45,7 +45,7 @@ void Game::Menu(/*sf::RenderWindow &window*/){
 		clima = 2000;
 		throw "tralalala";
 	}*/ // json me tira un error de linkeo
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Myomi and the bugs");
+	sf::RenderWindow window(sf::VideoMode(ventanaX, ventanaY), "Myomi and the bugs");
 	puntuacion.open("puntos.txt");
 	if (!puntuacion){
 		ofstream creador;

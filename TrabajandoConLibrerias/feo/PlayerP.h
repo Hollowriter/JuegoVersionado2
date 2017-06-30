@@ -15,6 +15,11 @@ private:
 	const int startingPosition = 100;
 	const int velocity = 750;
 	const int startingHealth = 110;
+	const int spriteX = 46;
+	const int spriteY = 64;
+	const int anim1 = 45;
+	const int anim2 = 64;
+	const int anim4 = 135;
 	int health;
 	int score;
 	int direction;
