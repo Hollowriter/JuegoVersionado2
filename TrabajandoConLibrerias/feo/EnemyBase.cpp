@@ -5,11 +5,11 @@ EnemyBase::EnemyBase()
 health(basicHealth),
 thyTexture(),
 enemyTime(0){
-	thyTexture.loadFromFile("piedrita.png");
+	thyTexture.loadFromFile("Assets/piedrita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
-	sonido.loadFromFile("Squish.wav");
+	sonido.loadFromFile("Assets/Squish.wav");
 	sonidito.setBuffer(sonido);
 }
 EnemyBase::EnemyBase(int vida, float tiempo)
@@ -17,11 +17,11 @@ EnemyBase::EnemyBase(int vida, float tiempo)
 health(vida),
 thyTexture(),
 enemyTime(tiempo){
-	thyTexture.loadFromFile("piedrita.png");
+	thyTexture.loadFromFile("Assets/piedrita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
-	sonido.loadFromFile("Squish.wav");
+	sonido.loadFromFile("Assets/Squish.wav");
 	sonidito.setBuffer(sonido);
 }
 EnemyBase::~EnemyBase(){

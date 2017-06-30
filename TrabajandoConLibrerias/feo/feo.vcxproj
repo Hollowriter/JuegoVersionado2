@@ -90,7 +90,8 @@ copy $(SolutionDir)SFML-2.4.2\bin\sfml-audio-d-2.dll $(SolutionDir)Debug
 copy $(SolutionDir)SFML-2.4.2\bin\sfml-network-d-2.dll $(SolutionDir)Debug
 copy $(SolutionDir)VLD\bin\Win32\dbghelp.dll $(SolutionDir)Debug
 copy $(SolutionDir)VLD\bin\Win32\vld_x86.dll $(SolutionDir)Debug
-copy $(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest $(SolutionDir)Debug</Command>
+copy $(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest $(SolutionDir)Debug
+copy $(SolutionDir)feo\Assets\* $(SolutionDir)Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,6 +124,9 @@ copy $(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest $(SolutionDir)Debug
       <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2\lib;$(SolutionDir)VLD\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)feo\Assets\* $(SolutionDir)Release</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

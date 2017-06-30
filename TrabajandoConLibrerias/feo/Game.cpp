@@ -42,12 +42,12 @@ void Game::Menu(){
 		throw "tralalala";
 	}*/ // json me tira un error de linkeo
 	sf::RenderWindow window(sf::VideoMode(ventanaX, ventanaY), "Myomi and the bugs");
-	puntuacion.open("puntos.txt");
+	puntuacion.open("feo/Assets/puntos.txt");
 	if (!puntuacion){
 		ofstream creador;
-		creador.open("puntos.txt");
+		creador.open("feo/Assets/puntos.txt");
 		creador.close();
-		puntuacion.open("puntos.txt");
+		puntuacion.open("feo/Assets/puntos.txt");
 	}
 	if (puntuacion.is_open()){
 		puntuacion >> detectorPuntos;
@@ -56,7 +56,7 @@ void Game::Menu(){
 	puntuacion.close();
 	quieroJugar = false;
 	sf::Font thyFont;
-	thyFont.loadFromFile("Crimson-Roman.ttf");
+	thyFont.loadFromFile("Assets/Crimson-Roman.ttf");
 	sf::Text thyText("Myomi and the bugs", thyFont, 40);
 	sf::Text otherText("Press space to start", thyFont, 25);
 	sf::Text marcador("High score: " + detectorPuntos, thyFont, 30);
@@ -111,7 +111,7 @@ void Game::Menu(){
 	}
 }
 void Game::Play(sf::RenderWindow &window){
-	musiquita.openFromFile("someone.ogg");
+	musiquita.openFromFile("Assets/someone.ogg");
 	musiquita.play();
 	myomi->SetHealth(basicHealth);
 	for (int i = 0; i < TOPE; i++) {
@@ -155,7 +155,7 @@ void Game::Play(sf::RenderWindow &window){
 	}
 	if (puntaje > puntajeMasAlto){
 		puntajeMasAlto = puntaje;
-		puntuacion.open("puntos.txt");
+		puntuacion.open("feo/Assets/puntos.txt");
 		puntuacion << puntajeMasAlto;
 		puntuacion.close();
 	}
@@ -167,7 +167,7 @@ void Game::Play(sf::RenderWindow &window){
 }
 void Game::Credits(sf::RenderWindow &window){
 	sf::Font thyFont;
-	thyFont.loadFromFile("Crimson-Roman.ttf");
+	thyFont.loadFromFile("Assets/Crimson-Roman.ttf");
 	sf::Text texty("'arte' y programacion: Rodrigo Diaz Klipphan", thyFont, 25);
 	sf::Text textou("Herramientas: Piskel, Visual Studio", thyFont, 20);
 	sf::Text superTextou("Musica: http://freemusicarchive.org/music/Dead_Peoples_Records/", thyFont, 20);
