@@ -55,6 +55,7 @@ void Game::Menu(/*sf::RenderWindow &window*/){
 	}
 	if (puntuacion.is_open()){
 		puntuacion >> detectorPuntos;
+		puntajeMasAlto = atoi(detectorPuntos.c_str());
 	}
 	puntuacion.close();
 	quieroJugar = false;
@@ -159,12 +160,13 @@ void Game::Play(sf::RenderWindow &window){
 		puntajeMasAlto = puntaje;
 		puntuacion.open("puntos.txt");
 		puntuacion << puntajeMasAlto;
+		puntuacion.close();
 	}
 	musiquita.stop();
 	quieroJugar = false;
 	puntaje = 0;
 	window.clear(sf::Color::White);
-	puntuacion.close();
+	mineral->SetThrown(false);
 }
 void Game::Credits(sf::RenderWindow &window){
 	sf::Font thyFont;
@@ -184,7 +186,7 @@ void Game::Credits(sf::RenderWindow &window){
 	superTextou.move(200.0f, 300.0f);
 	thyTextou.move(200.0f, 350.0f);
 	testo.move(200.0f, 400.0f);
-	while (window.isOpen() && quieroJugar == false) {
+	while (window.isOpen() && !(sf::Keyboard::isKeyPressed(sf::Keyboard::M))) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed) {
@@ -198,8 +200,5 @@ void Game::Credits(sf::RenderWindow &window){
 		window.draw(thyTextou);
 		window.draw(testo);
 		window.display();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
-			quieroJugar = true;
-		}
 	}
 }
