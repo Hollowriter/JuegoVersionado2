@@ -11,7 +11,7 @@ int main() {
 #else
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char*, int nShowCmd) {
 	Game* juego = new Game();
-	juego->Play();
+	juego->Menu();
 	delete juego;
 	return 0;
 }

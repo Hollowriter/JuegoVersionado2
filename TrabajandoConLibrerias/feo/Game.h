@@ -10,12 +10,14 @@
 #include"Radroach.h"
 #include"Beatle.h"
 #include"Rock.h"
+#include"Clima.h"
 #include<Windows.h>
 #if DEBUG
 #include"vld.h"
 #endif
-#include"json.hpp"
+// #include"../json.hpp" // json me tira un error de linkeo
 #define TOPE 10
+#define CLIMA 4
 using namespace std;
 class Game
 {
@@ -30,12 +32,9 @@ private:
 	sf::Text texto;
 	int puntaje;
 	int puntajeMasAlto;
+	string reportero;
 	int clima;
 	bool quieroJugar;
-	const int sunny = 32;
-	const int cloudy = 26;
-	const int hot = 36;
-	const int foggy = 20;
 public:
 	Game();
 	~Game();

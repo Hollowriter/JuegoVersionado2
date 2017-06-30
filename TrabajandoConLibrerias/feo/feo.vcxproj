@@ -152,6 +152,7 @@ copy $(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest $(SolutionDir)Debug
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beatle.h" />
+    <ClInclude Include="Clima.h" />
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="PlayerP.h" />
