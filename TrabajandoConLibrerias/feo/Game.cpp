@@ -42,12 +42,12 @@ void Game::Menu(){
 		throw "tralalala";
 	}*/ // json me tira un error de linkeo
 	sf::RenderWindow window(sf::VideoMode(ventanaX, ventanaY), "Myomi and the bugs");
-	puntuacion.open("feo/Assets/puntos.txt");
+	puntuacion.open("puntos.txt");
 	if (!puntuacion){
 		ofstream creador;
-		creador.open("feo/Assets/puntos.txt");
+		creador.open("puntos.txt");
 		creador.close();
-		puntuacion.open("feo/Assets/puntos.txt");
+		puntuacion.open("puntos.txt");
 	}
 	if (puntuacion.is_open()){
 		puntuacion >> detectorPuntos;
@@ -155,7 +155,7 @@ void Game::Play(sf::RenderWindow &window){
 	}
 	if (puntaje > puntajeMasAlto){
 		puntajeMasAlto = puntaje;
-		puntuacion.open("feo/Assets/puntos.txt");
+		puntuacion.open("puntos.txt");
 		puntuacion << puntajeMasAlto;
 		puntuacion.close();
 	}
