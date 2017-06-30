@@ -127,6 +127,9 @@ copy $(SolutionDir)feo\Assets\* $(SolutionDir)Debug</Command>
     <PostBuildEvent>
       <Command>copy $(SolutionDir)feo\Assets\* $(SolutionDir)Release</Command>
     </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>copy $(SolutionDir)OpenAl32.dll $(SolutionDir)Release</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
