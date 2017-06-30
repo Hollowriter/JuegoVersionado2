@@ -5,6 +5,16 @@ Game::Game()
 puntaje(0),
 puntajeMasAlto(0){
 	srand(time(0));
+	myomi = new PlayerP();
+	mineral = new Rock();
+	for (int i = 0; i < TOPE; i++) {
+		if (i < TOPE / 2) {
+			bichos[i] = new Radroach();
+		}
+		else if (i >= TOPE / 2) {
+			bichos[i] = new Beatle();
+		}
+	}
 }
 Game::~Game(){
 	delete myomi;
@@ -18,7 +28,11 @@ Game::~Game(){
 	myomi = NULL;
 	mineral = NULL;
 }
-void Game::Menu(){
+/*void Game::WindowCharge(){
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Myomi and the bugs");
+	Menu(window);
+}*/
+void Game::Menu(/*sf::RenderWindow &window*/){
 	/*try {
 		sf::Http http("http://query.yahooapis.com/");
 		sf::Http::Request requesting;
@@ -32,16 +46,30 @@ void Game::Menu(){
 		throw "tralalala";
 	}*/ // json me tira un error de linkeo
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Myomi and the bugs");
+	puntuacion.open("puntos.txt");
+	if (!puntuacion){
+		ofstream creador;
+		creador.open("puntos.txt");
+		creador.close();
+		puntuacion.open("puntos.txt");
+	}
+	if (puntuacion.is_open()){
+		puntuacion >> detectorPuntos;
+	}
+	puntuacion.close();
 	quieroJugar = false;
 	sf::Font thyFont;
 	thyFont.loadFromFile("Crimson-Roman.ttf");
 	sf::Text thyText("Myomi and the bugs", thyFont, 40);
 	sf::Text otherText("Press space to start", thyFont, 25);
+	sf::Text marcador("High score: " + detectorPuntos, thyFont, 30);
 	thyText.setFillColor(sf::Color::Black);
 	otherText.setFillColor(sf::Color::Black);
+	marcador.setFillColor(sf::Color::Black);
 	thyText.move(200.0f, 100.0f);
 	otherText.move(250.0f, 150.0f);
-	while (window.isOpen() && quieroJugar == false) {
+	marcador.move(500.0f, 140.0f);
+	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed) {
@@ -57,24 +85,38 @@ void Game::Menu(){
 		if (quieroJugar == true) {
 			Play(window);
 		}
+		/*switch (clima) {
+		case sunny:
+		window.clear(sf::Color::Yellow);
+		break;
+		case windy:
+		window.clear(sf::Color::Blue);
+		break;
+		case cloudy:
+		window.clear(sf::Color::Green);
+		break;
+		case hot:
+		window.clear(sf::Color::Red);
+		break;
+		case cold:
+		window.clear(sf::Color::Black);
+		break;
+		default:
+		window.clear(sf::Color::White);
+		break;
+		}*/ // json me tira errores de linkeo
 		window.clear(sf::Color::White);
 		window.draw(thyText);
 		window.draw(otherText);
+		window.draw(marcador);
 		window.display();
 	}
 }
 void Game::Play(sf::RenderWindow &window){
 	musiquita.openFromFile("someone.ogg");
 	musiquita.play();
-	myomi = new PlayerP();
-	mineral = new Rock();
+	myomi->SetHealth(basicHealth);
 	for (int i = 0; i < TOPE; i++) {
-		if (i < TOPE / 2) {
-			bichos[i] = new Radroach();
-		}
-		else if (i >= TOPE / 2) {
-			bichos[i] = new Beatle();
-		}
 		if (bichos[i] != NULL) {
 			bichos[i]->Positioning(myomi);
 		}
@@ -111,10 +153,18 @@ void Game::Play(sf::RenderWindow &window){
 			}
 		}
 		window.display();
+		puntaje++;
+	}
+	if (puntaje > puntajeMasAlto){
+		puntajeMasAlto = puntaje;
+		puntuacion.open("puntos.txt");
+		puntuacion << puntajeMasAlto;
 	}
 	musiquita.stop();
 	quieroJugar = false;
+	puntaje = 0;
 	window.clear(sf::Color::White);
+	puntuacion.close();
 }
 void Game::Credits(sf::RenderWindow &window){
 	sf::Font thyFont;
@@ -141,26 +191,6 @@ void Game::Credits(sf::RenderWindow &window){
 				window.close();
 			}
 		}
-		/*switch (clima) {
-		case sunny:
-			window.clear(sf::Color::Yellow);
-			break;
-		case windy:
-			window.clear(sf::Color::Blue);
-			break;
-		case cloudy:
-			window.clear(sf::Color::Green);
-			break;
-		case hot:
-			window.clear(sf::Color::Red);
-			break;
-		case cold:
-			window.clear(sf::Color::Black);
-			break;
-		default:
-			window.clear(sf::Color::White);
-			break;
-		}*/ // json me tira errores de linkeo
 		window.clear(sf::Color::White);
 		window.draw(texty);
 		window.draw(textou);

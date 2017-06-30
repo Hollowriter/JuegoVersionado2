@@ -4,6 +4,7 @@ using namespace std;
 #if DEBUG
 int main() {
 	Game* juego = new Game();
+	/*juego->WindowCharge();*/
 	juego->Menu();
 	delete juego;
 	return 0;

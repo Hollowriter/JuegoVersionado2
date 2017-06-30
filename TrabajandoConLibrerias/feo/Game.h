@@ -33,12 +33,16 @@ private:
 	int puntaje;
 	int puntajeMasAlto;
 	string reportero;
+	string detectorPuntos;
+	fstream puntuacion;
 	int clima;
 	bool quieroJugar;
+	const int basicHealth = 110;
 public:
 	Game();
 	~Game();
-	void Menu();
+	// void WindowCharge();
+	void Menu(/*sf::RenderWindow &window*/);
 	void Play(sf::RenderWindow &window);
 	void Credits(sf::RenderWindow &window);
 };
