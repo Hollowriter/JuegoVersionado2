@@ -82,18 +82,18 @@
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;sfml-main-d.lib;opengl32.lib;openal32.lib;winmm.lib;gdi32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)SFML-2.4.2\bin\openal32.dll $(SolutionDir)Debug
-copy $(SolutionDir)SFML-2.4.2\bin\sfml-system-d-2.dll $(SolutionDir)Debug
-copy $(SolutionDir)SFML-2.4.2\bin\sfml-window-d-2.dll $(SolutionDir)Debug
-copy $(SolutionDir)SFML-2.4.2\bin\sfml-graphics-d-2.dll $(SolutionDir)Debug
-copy $(SolutionDir)SFML-2.4.2\bin\sfml-audio-d-2.dll $(SolutionDir)Debug
-copy $(SolutionDir)SFML-2.4.2\bin\sfml-network-d-2.dll $(SolutionDir)Debug
-copy $(SolutionDir)VLD\bin\Win32\dbghelp.dll $(SolutionDir)Debug
-copy $(SolutionDir)VLD\bin\Win32\vld_x86.dll $(SolutionDir)Debug
-copy $(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest $(SolutionDir)Debug
-cd $(SolutionDir)Debug
+      <Command>copy "$(SolutionDir)SFML-2.4.2\bin\openal32.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-system-d-2.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-window-d-2.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-graphics-d-2.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-audio-d-2.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-network-d-2.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)VLD\bin\Win32\dbghelp.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)VLD\bin\Win32\vld_x86.dll" "$(SolutionDir)Debug"
+copy "$(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest" "$(SolutionDir)Debug"
+cd "$(SolutionDir)Debug"
 md Assets
-copy $(SolutionDir)feo\Assets\* $(SolutionDir)Debug\Assets</Command>
+copy "$(SolutionDir)feo\Assets\*" "$(SolutionDir)Debug\Assets"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,23 +116,31 @@ copy $(SolutionDir)feo\Assets\* $(SolutionDir)Debug\Assets</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2\include;$(SolutionDir)VLD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;RELEASE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-audio-s.lib;sfml-system-s.lib;sfml-main.lib;opengl32.lib;openal32.lib;winmm.lib;gdi32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2\lib;$(SolutionDir)VLD\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-audio-s.lib;sfml-system-s.lib;sfml-main.lib;opengl32.lib;openal32.lib;winmm.lib;gdi32.lib;ws2_32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>cd Release
+      <Command>copy "$(SolutionDir)SFML-2.4.2\bin\openal32.dll" "$(SolutionDir)Release"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-system-s-2.dll" "$(SolutionDir)Release"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-window-s-2.dll" "$(SolutionDir)Release"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-graphics-s-2.dll" "$(SolutionDir)Release"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-audio-s-2.dll" "$(SolutionDir)Release"
+copy "$(SolutionDir)SFML-2.4.2\bin\sfml-network-s-2.dll" "$(SolutionDir)Release"
+cd "$(SolutionDir)Release"
 md Assets
-copy $(SolutionDir)feo\Assets\* $(SolutionDir)Release\Assets</Command>
+copy "$(SolutionDir)feo\Assets\*" "$(SolutionDir)Release\Assets"
+copy "$(SolutionDir)OpenAL32.dll" "$(SolutionDir)Release"</Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command>copy $(SolutionDir)OpenAl32.dll $(SolutionDir)Release</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
