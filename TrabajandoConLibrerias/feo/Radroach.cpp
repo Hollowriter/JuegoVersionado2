@@ -1,13 +1,13 @@
 #include "Radroach.h"
 
 Radroach::Radroach():EnemyBase(){
-	thyTexture.loadFromFile("Assets/cucarachita.png");
+	thyTexture.loadFromFile("Assets\cucarachita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 }
 Radroach::Radroach(int vida, float tiempo):EnemyBase(vida, tiempo){
-	thyTexture.loadFromFile("Assets/cucarachita.png");
+	thyTexture.loadFromFile("Assets\cucarachita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));

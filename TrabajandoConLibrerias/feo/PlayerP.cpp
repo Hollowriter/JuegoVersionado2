@@ -6,7 +6,7 @@ health(startingHealth),
 score(0),
 direction(0),
 thyTexture(){
-	thyTexture.loadFromFile("Assets/Myomi.png");
+	thyTexture.loadFromFile("Assets\Myomi.png");
 	rectSourceSprite.contains(spriteX, spriteY);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, spriteX, spriteY));
@@ -17,7 +17,7 @@ PlayerP::PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectang
 	score(puntos),
 	direction(direccion),
 	thyTexture(){
-	thyTexture.loadFromFile("Assets/Myomi.png");
+	thyTexture.loadFromFile("Assets\Myomi.png");
 	rectSourceSprite.contains(spriteX, spriteY);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, spriteX, spriteY));

@@ -5,7 +5,7 @@ Rock::Rock()
 look(0),
 thrown(false),
 thyTexture(){
-	thyTexture.loadFromFile("Assets/piedrita.png");
+	thyTexture.loadFromFile("Assets\piedrita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
 	seinSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
