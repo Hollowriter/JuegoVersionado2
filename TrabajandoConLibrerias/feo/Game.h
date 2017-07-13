@@ -5,11 +5,11 @@
 #include<iostream>
 #include<ctime>
 #include<fstream>
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
-#include"SFML\Audio.hpp"
-#include"SFML\Network.hpp"
-#include"SFML\Main.hpp"
+#include"SFML/Window.hpp"
+#include"SFML/Graphics.hpp"
+#include"SFML/Audio.hpp"
+#include"SFML/Network.hpp"
+#include"SFML/Main.hpp"
 #include"PlayerP.h"
 #include"Radroach.h"
 #include"Beatle.h"

@@ -3,8 +3,8 @@
 #define PLAYERP_H
 
 #include<iostream>
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
+#include"SFML/Window.hpp"
+#include"SFML/Graphics.hpp"
 #include"Rock.h"
 using namespace std;
 class PlayerP {

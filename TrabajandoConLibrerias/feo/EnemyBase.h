@@ -3,9 +3,9 @@
 #define ENEMYBASE_H
 
 #include<iostream>
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
-#include"SFML\Audio.hpp"
+#include"SFML/Window.hpp"
+#include"SFML/Graphics.hpp"
+#include"SFML/Audio.hpp"
 #include"PlayerP.h"
 #include"Rock.h"
 class EnemyBase{

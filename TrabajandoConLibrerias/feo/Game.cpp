@@ -56,7 +56,7 @@ void Game::Menu(){
 	puntuacion.close();
 	quieroJugar = false;
 	sf::Font thyFont;
-	thyFont.loadFromFile("Assets\Crimson-Roman.ttf");
+	thyFont.loadFromFile("Assets/Crimson-Roman.ttf");
 	sf::Text thyText("Myomi and the bugs", thyFont, 40);
 	sf::Text otherText("Press space to start", thyFont, 25);
 	sf::Text marcador("High score: " + detectorPuntos, thyFont, 30);
@@ -111,7 +111,7 @@ void Game::Menu(){
 	}
 }
 void Game::Play(sf::RenderWindow &window){
-	musiquita.openFromFile("Assets\someone.ogg");
+	musiquita.openFromFile("Assets/someone.ogg");
 	musiquita.play();
 	myomi->SetHealth(basicHealth);
 	for (int i = 0; i < TOPE; i++) {
@@ -167,7 +167,7 @@ void Game::Play(sf::RenderWindow &window){
 }
 void Game::Credits(sf::RenderWindow &window){
 	sf::Font thyFont;
-	thyFont.loadFromFile("Assets\Crimson-Roman.ttf");
+	thyFont.loadFromFile("Assets/Crimson-Roman.ttf");
 	sf::Text texty("'arte' y programacion: Rodrigo Diaz Klipphan", thyFont, 25);
 	sf::Text textou("Herramientas: Piskel, Visual Studio", thyFont, 20);
 	sf::Text superTextou("Musica: http://freemusicarchive.org/music/Dead_Peoples_Records/", thyFont, 20);

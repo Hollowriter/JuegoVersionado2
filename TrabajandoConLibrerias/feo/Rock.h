@@ -2,10 +2,9 @@
 #ifndef ROCK_H
 #define ROCK_H
 
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
-class Rock
-{
+#include"SFML/Window.hpp"
+#include"SFML/Graphics.hpp"
+class Rock{
 private:
 	const int ditchedOutPosition = 1000;
 	const float speedMovement = 300.0f;
