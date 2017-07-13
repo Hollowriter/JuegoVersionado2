@@ -1,4 +1,3 @@
-#pragma once
 #ifndef RADROACH_H
 #define RADROACH_H
 

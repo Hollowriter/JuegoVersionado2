@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ROCK_H
 #define ROCK_H
 

@@ -1,4 +1,3 @@
-#pragma once
 #ifndef BEATLE_H
 #define BEATLE_H
 

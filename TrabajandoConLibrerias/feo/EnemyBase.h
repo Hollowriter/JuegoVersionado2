@@ -1,4 +1,3 @@
-#pragma once
 #ifndef ENEMYBASE_H
 #define ENEMYBASE_H
 

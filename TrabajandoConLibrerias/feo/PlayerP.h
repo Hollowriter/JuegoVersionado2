@@ -1,4 +1,3 @@
-#pragma once
 #ifndef PLAYERP_H
 #define PLAYERP_H
 
