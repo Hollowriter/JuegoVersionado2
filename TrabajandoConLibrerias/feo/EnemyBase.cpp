@@ -4,6 +4,7 @@ EnemyBase::EnemyBase()
 :
 health(basicHealth),
 thyTexture(),
+seinSprite(),
 enemyTime(0){
 	thyTexture.loadFromFile("Assets/piedrita.png");
 	rectSourceSprite.contains(32, 32);

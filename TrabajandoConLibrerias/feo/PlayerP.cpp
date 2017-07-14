@@ -5,7 +5,8 @@ PlayerP::PlayerP()
 health(startingHealth),
 score(0),
 direction(0),
-thyTexture(){
+thyTexture(),
+seinSprite(){
 	thyTexture.loadFromFile("Assets/Myomi.png");
 	rectSourceSprite.contains(spriteX, spriteY);
 	seinSprite.setTexture(thyTexture);

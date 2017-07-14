@@ -4,7 +4,8 @@ Rock::Rock()
 :
 look(0),
 thrown(false),
-thyTexture(){
+thyTexture(),
+seinSprite(){
 	thyTexture.loadFromFile("Assets/piedrita.png");
 	rectSourceSprite.contains(32, 32);
 	seinSprite.setTexture(thyTexture);
