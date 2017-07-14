@@ -29,18 +29,17 @@ Game::~Game(){
 	mineral = NULL;
 }
 void Game::Menu(){
-	/*try {
-		sf::Http http("http://query.yahooapis.com/");
-		sf::Http::Request requesting;
-		requesting.setUri("/v1/public/yql?q=select%20item.condition.code%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22buenos%20aires%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
-		sf::Http::Response answer = http.sendRequest(requesting);
-		nlohmann::json jdata = nlohmann::json::parse(answer.getBody().c_str());
-		clima = atoi(reportero.c_str());
+	/*try{
+		thyHost.setHost("http://query.yahooapis.com");
+		thyRequest.setUri("v1/public/yql?q=select%20item.condition.code%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22dallas%2C%20tx%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
+		seinResponse = thyHost.sendRequest(thyRequest);
+		datus = json::parse(seinResponse.getBody().c_str());
+		string reportero = datus["query"]["results"]["channel"]["item"]["condition"]["code"];
+		clima = stoi(reportero);
 	}
 	catch (exception e){
-		clima = 2000;
-		throw "tralalala";
-	}*/ // json me tira un error de linkeo
+		clima = CLIMA;
+	}*/
 	sf::RenderWindow window(sf::VideoMode(ventanaX, ventanaY), "Myomi and the bugs");
 	puntuacion.open("puntos.txt");
 	if (!puntuacion){
