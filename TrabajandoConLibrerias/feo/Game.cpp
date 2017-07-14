@@ -59,12 +59,15 @@ void Game::Menu(){
 	sf::Text thyText("Myomi and the bugs", thyFont, 40);
 	sf::Text otherText("Press space to start", thyFont, 25);
 	sf::Text marcador("High score: " + detectorPuntos, thyFont, 30);
+	sf::Text instrucciones("Tutorial: Myomi moves with the directional pad and attacks with 'x'", thyFont, 20);
 	thyText.setFillColor(sf::Color::Black);
 	otherText.setFillColor(sf::Color::Black);
 	marcador.setFillColor(sf::Color::Black);
+	instrucciones.setFillColor(sf::Color::Black);
 	thyText.move(200.0f, 100.0f);
 	otherText.move(250.0f, 150.0f);
 	marcador.move(500.0f, 140.0f);
+	instrucciones.move(150.0f, 250.f);
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -105,6 +108,7 @@ void Game::Menu(){
 		window.draw(thyText);
 		window.draw(otherText);
 		window.draw(marcador);
+		window.draw(instrucciones);
 		window.display();
 	}
 }
