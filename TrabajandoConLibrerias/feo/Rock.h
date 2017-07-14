@@ -18,10 +18,10 @@ public:
 	void Path(sf::RenderWindow &ventanita, sf::Time cuento);
 	void SetThrown(bool tirado);
 	void SetLook(int observado);
-	bool GetThrown();
-	int GetLook();
+	const bool GetThrown();
+	const int GetLook();
 	sf::Sprite& GetShape();
-	sf::IntRect GetRect();
+	const sf::IntRect GetRect();
 };
 
 #endif

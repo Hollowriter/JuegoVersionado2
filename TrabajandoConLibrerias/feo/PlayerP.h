@@ -26,17 +26,17 @@ public:
 	PlayerP();
 	PlayerP(int vida, int puntos, int direccion, sf::RectangleShape rectangular);
 	void Move(sf::Time cuento);
-	bool Death();
+	const bool Death();
 	void Draw(sf::RenderWindow &ventana);
 	void SetHealth(int vida);
 	void SetScore(int puntos);
 	void SetDirection(int direccion);
 	void Throwing(Rock* piedra);
-	int GetHealth();
-	int GetScore();
-	int GetDirection();
-	sf::Sprite GetShape();
-	sf::IntRect GetRect();
+	const int GetHealth();
+	const int GetScore();
+	const int GetDirection();
+	const sf::Sprite GetShape();
+	const sf::IntRect GetRect();
 };
 
 #endif

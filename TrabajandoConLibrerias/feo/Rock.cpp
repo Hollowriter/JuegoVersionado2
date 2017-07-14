@@ -44,20 +44,15 @@ void Rock::SetThrown(bool tirado){
 void Rock::SetLook(int observado){
 	look = observado;
 }
-/*void Rock::CollideEnemy(EnemyBase* blanco){
-	blanco->SetHealth(blanco->GetHealth() - blanco->GetHealth());
-	thrown = false;
-	seinShape.setPosition(1000, 1000);
-}*/
-bool Rock::GetThrown(){
+const bool Rock::GetThrown(){
 	return thrown;
 }
-int Rock::GetLook(){
+const int Rock::GetLook(){
 	return look;
 }
 sf::Sprite& Rock::GetShape(){
 	return seinSprite;
 }
-sf::IntRect Rock::GetRect(){
+const sf::IntRect Rock::GetRect(){
 	return rectSourceSprite;
 }

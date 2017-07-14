@@ -44,7 +44,7 @@ void PlayerP::Move(sf::Time cuento) {
 		seinSprite.setTextureRect(sf::IntRect(0, anim2, spriteX, spriteY));
 	}
 }
-bool PlayerP::Death() {
+const bool PlayerP::Death() {
 	if (health <= 0) {
 		return true;
 	}
@@ -73,18 +73,18 @@ void PlayerP::Throwing(Rock* piedra){
 		}
 	}
 }
-int PlayerP::GetHealth(){
+const int PlayerP::GetHealth(){
 	return health;
 }
-int PlayerP::GetScore(){
+const int PlayerP::GetScore(){
 	return score;
 }
-int PlayerP::GetDirection(){
+const int PlayerP::GetDirection(){
 	return direction;
 }
-sf::Sprite PlayerP::GetShape(){
+const sf::Sprite PlayerP::GetShape(){
 	return seinSprite;
 }
-sf::IntRect PlayerP::GetRect(){
+const sf::IntRect PlayerP::GetRect(){
 	return rectSourceSprite;
 }

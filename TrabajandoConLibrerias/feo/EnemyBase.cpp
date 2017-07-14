@@ -31,7 +31,7 @@ void EnemyBase::Attack(sf::Time cuento, PlayerP* niña){
 void EnemyBase::Draw(sf::RenderWindow &ventana) {
 	ventana.draw(seinSprite);
 }
-bool EnemyBase::Death(){
+const bool EnemyBase::Death(){
 	if (health <= 0) {
 		return true;
 	}
@@ -52,7 +52,7 @@ int EnemyBase::GetHealth() {
 void EnemyBase::SetEnemyTime(float timing) {
 	enemyTime = timing;
 }
-float EnemyBase::GetEnemyTime() {
+const float EnemyBase::GetEnemyTime() {
 	return enemyTime;
 }
 void EnemyBase::CollideRock(Rock* piedra) {
@@ -84,9 +84,9 @@ void EnemyBase::Positioning(PlayerP* amenaza){
 		}
 	}
 }
-sf::Sprite& EnemyBase::GetShape() {
+const sf::Sprite& EnemyBase::GetShape() {
 	return seinSprite;
 }
-sf::IntRect EnemyBase::GetRect() {
+const sf::IntRect EnemyBase::GetRect() {
 	return rectSourceSprite;
 }

@@ -27,16 +27,16 @@ public:
 	~EnemyBase();
 	virtual void Attack(sf::Time cuento, PlayerP* niña) = 0;
 	void Draw(sf::RenderWindow &ventana);
-	bool Death();
+	const bool Death();
 	void AfterLife(PlayerP* asesino);
 	void SetHealth(int vida);
 	int GetHealth();
 	void SetEnemyTime(float timing);
-	float GetEnemyTime();
+	const float GetEnemyTime();
 	void CollideRock(Rock* piedra);
 	void Positioning(PlayerP* amenaza);
-	sf::Sprite& GetShape();
-	sf::IntRect GetRect();
+	const sf::Sprite& GetShape();
+	const sf::IntRect GetRect();
 };
 
 #endif

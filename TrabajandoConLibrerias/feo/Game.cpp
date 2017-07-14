@@ -83,26 +83,25 @@ void Game::Menu(){
 			marcador.setString("High score: " + to_string(puntajeMasAlto));
 		}
 		switch (clima) {
-		case sunny:
-		window.clear(sf::Color::Yellow);
-		break;
-		case windy:
-		window.clear(sf::Color::Blue);
-		break;
-		case cloudy:
-		window.clear(sf::Color::Green);
-		break;
-		case hot:
-		window.clear(sf::Color::Red);
-		break;
-		case cold:
-		window.clear(sf::Color::Black);
-		break;
-		default:
-		window.clear(sf::Color::Cyan);
-		break;
+			case sunny:
+			window.clear(sf::Color::Yellow);
+			break;
+			case windy:
+			window.clear(sf::Color::Blue);
+			break;
+			case cloudy:
+			window.clear(sf::Color::Green);
+			break;
+			case hot:
+			window.clear(sf::Color::Red);
+			break;
+			case cold:
+			window.clear(sf::Color::Black);
+			break;
+			default:
+			window.clear(sf::Color::Cyan);
+			break;
 		}
-		// window.clear(sf::Color::White);
 		window.draw(thyText);
 		window.draw(otherText);
 		window.draw(marcador);
