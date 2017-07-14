@@ -79,7 +79,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2\lib;$(SolutionDir)VLD\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-main-d.lib;opengl32.lib;openal32.lib;winmm.lib;ws2_32.lib;gdi32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-main-d.lib;opengl32.lib;openal32.lib;winmm.lib;ws2_32.lib;gdi32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;%(AdditionalDependencies);vld.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>cd "$(SolutionDir)Debug"
@@ -122,18 +122,12 @@ copy "$(SolutionDir)VLD\bin\Win32\Microsoft.DTfW.DHL.manifest" "$(SolutionDir)De
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sfml-system-s.lib;sfml-window-s.lib;sfml-graphics-s.lib;sfml-audio-s.lib;sfml-main.lib;opengl32.lib;openal32.lib;winmm.lib;gdi32.lib;ws2_32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-s.lib;sfml-window-s.lib;sfml-graphics-s.lib;sfml-audio-s.lib;sfml-network-s.lib;sfml-main.lib;opengl32.lib;openal32.lib;OpenAL32.lib;winmm.lib;gdi32.lib;ws2_32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;%(AdditionalDependecies);ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)SFML-2.4.2\bin\openal32.dll" "$(SolutionDir)Release"
-copy "$(SolutionDir)SFML-2.4.2\bin\sfml-system-s-2.dll" "$(SolutionDir)Release"
-copy "$(SolutionDir)SFML-2.4.2\bin\sfml-window-s-2.dll" "$(SolutionDir)Release"
-copy "$(SolutionDir)SFML-2.4.2\bin\sfml-graphics-s-2.dll" "$(SolutionDir)Release"
-copy "$(SolutionDir)SFML-2.4.2\bin\sfml-audio-s-2.dll" "$(SolutionDir)Release"
-copy "$(SolutionDir)SFML-2.4.2\bin\sfml-network-s-2.dll" "$(SolutionDir)Release"
-cd "$(SolutionDir)Release"
+      <Command>cd "$(SolutionDir)Release"
 md Assets
 copy "$(SolutionDir)feo\Assets\*" "$(SolutionDir)Release\Assets"
 copy "$(SolutionDir)OpenAL32.dll" "$(SolutionDir)Release"</Command>

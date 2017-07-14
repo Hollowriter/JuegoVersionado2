@@ -29,7 +29,7 @@ Game::~Game(){
 	mineral = NULL;
 }
 void Game::Menu(){
-	/*try{
+	try{
 		thyHost.setHost("http://query.yahooapis.com");
 		thyRequest.setUri("v1/public/yql?q=select%20item.condition.code%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22dallas%2C%20tx%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
 		seinResponse = thyHost.sendRequest(thyRequest);
@@ -39,7 +39,7 @@ void Game::Menu(){
 	}
 	catch (exception e){
 		clima = CLIMA;
-	}*/
+	}
 	sf::RenderWindow window(sf::VideoMode(ventanaX, ventanaY), "Myomi and the bugs");
 	puntuacion.open("puntos.txt");
 	if (!puntuacion){
@@ -82,7 +82,7 @@ void Game::Menu(){
 			Play(window);
 			marcador.setString("High score: " + to_string(puntajeMasAlto));
 		}
-		/*switch (clima) {
+		switch (clima) {
 		case sunny:
 		window.clear(sf::Color::Yellow);
 		break;
@@ -99,10 +99,10 @@ void Game::Menu(){
 		window.clear(sf::Color::Black);
 		break;
 		default:
-		window.clear(sf::Color::White);
+		window.clear(sf::Color::Cyan);
 		break;
-		}*/ // json me tira errores de linkeo
-		window.clear(sf::Color::White);
+		}
+		// window.clear(sf::Color::White);
 		window.draw(thyText);
 		window.draw(otherText);
 		window.draw(marcador);
